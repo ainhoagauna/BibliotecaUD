@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+int menu()
+{
+	printf("Hola");
+}
 class Pelicula
 {
     string nombre, genero;
