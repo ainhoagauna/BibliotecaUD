@@ -1,12 +1,87 @@
 #include <stdio.h>
+#include <string.h>
 
-int menu()
+#define MAX_LENGHT 10
+typedef struct
 {
-	printf("Hola");
+	char nombre;
+	char genero;
+	double precio;
+	double valoracion;
+	bool alquilado;
+
+
+}Pelicula;
+
+int menu(void);
+void clear_if_needed(char *str);
+
+int main(void)
+{
+	int option;
+	int total=0;
+	Pelicula peliculas[MAX_LENGHT];
+
+	do{
+
+	option=menu();
+
+	switch (option)
+		{
+			case 1: if (total < MAX_ASIGNATURAS) 
+				{
+					leerPelicula(&peliculas[total], total); //el total nos señala la posicion del array, y con el & cogemos su direccion
+					total++;
+				} else
+				{
+					printf("No se admiten más peliculas\n");
+				}
+				break;
+
+			case 2: eliminarPelicula();
+				break;
+
+
+			case 3: imprimirListado(peliculas, total); //le pasamos el array, pero esto no pasa el tamaño que tiene por tanto debemos pasar otro parametro que en este caso es total
+				break;
+
+			case 4: printf("Ventas:%.2f\n", CalcularVentas(peliculas, total));
+				break;
+
+			
+		}
+	}while(option != 0);
+
+	return 0;
 }
+
+
+int menu(void)
+{
+	char str[MAX_LENGHT];
+	int opcion;
+	do{
+
+	printf("Hola");
+	printf("Indique su opcion: \n");
+	printf("1. Añadir pelicula\n");
+	printf("2. Eliminar pelicula\n");
+	printf("3. Lista de peliculas \n");
+	printf("4. Consultar ventas\n");
+	printf("\n");
+
+	fgets(str, MAX_LENGTH, stdin);
+		clear_if_needed(str); 
+
+	}while(opcion>4 | opcion<1);
+	
+
+}
+
+
 class Pelicula
 {
-    string nombre, genero;
+    char nombre, genero;
     double precio;
     bool alquilado;
 
@@ -16,7 +91,7 @@ class Pelicula
         set { nombre = value; }
     }
 
-    public string Genero
+    public char Genero
     {
         get{ return genero;}
         set{ genero = value;}
@@ -37,6 +112,7 @@ class Pelicula
 
     }
 }
+
 
 class Videoclub
 {
@@ -146,4 +222,13 @@ class Videoclub
         return ret;
     }
 
+}
+
+void clear_if_needed(char *str)
+{
+	if (str[strlen(str) - 1] != '\n')
+	{
+		int c;    
+    	while ( (c = getchar()) != EOF && c != '\n');
+    }
 }
