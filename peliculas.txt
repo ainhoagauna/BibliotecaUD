@@ -1,0 +1,41 @@
+Pelicula 1
+Es por tu bien
+Comedia
+1€
+7.5
+
+Pelicula 2
+Lo que de verdad importa
+Comedia - Drama
+3.50€
+6.8
+
+Pelicula 3
+Multiple
+Thriller
+2€
+8.9
+
+Pelicula 4
+Zona hostil
+Accion 
+1.50€
+7.6
+
+Pelicula 5
+Contratiempo
+Thriller
+1.90€
+8.4
+
+Pelicula 6
+La la land
+Drama - Romance
+2.70€
+9.1
+
+tenia que ser el
+comedia
+3.50?
+8.9
+

@@ -10,10 +10,13 @@ typedef struct
 	char genero;
 	double precio;
 	double valoracion;
-	//bool alquilado;
+	
 
 
 }Pelicula;
+
+
+void anadirPelicula();
 
 
 void clear_if_needed(char *str)
@@ -23,6 +26,82 @@ void clear_if_needed(char *str)
 		int c;    
     	while ( (c = getchar()) != EOF && c != '\n');
     }
+}
+
+void anadirPelicula()
+{
+
+	char* str;
+	int d;
+	FILE* f;
+	f=fopen("peliculas.txt", "a");
+
+	if(f==NULL)
+	{
+		printf("Archivo no encontrado\n");
+		//return -1;
+	}
+
+	printf("Introduzca los datos de la nueva pelicula: \n");
+	printf("NOMBRE: \n");
+	fgets(str, MAX_LENGHT, stdin);
+	clear_if_needed(str);
+	fprintf(f, "%s", str);
+	
+	printf("GENERO: \n");
+	fgets(str, MAX_LENGHT, stdin);
+	clear_if_needed(str);
+	fprintf(f, "%s", str);
+	
+
+	printf("PRECIO: \n");
+	fgets(str, MAX_LENGHT, stdin);
+	clear_if_needed(str);
+	fprintf(f, "%s", str);
+	
+
+	printf("VALORACION: \n");
+	fgets(str, MAX_LENGHT, stdin);
+	clear_if_needed(str);
+	fprintf(f, "%s\n", str);
+	
+
+	printf("PELICULA ANADIDA!!\n");
+	printf("\n");
+
+
+
+	fclose(f);
+
+
+}
+
+void listaPelicula()
+{
+
+
+	FILE* f;
+	f=fopen("peliculas.txt", "r");
+
+	if(f==NULL)
+	{
+		printf("Archivo no encontrado\n");
+	}
+	
+	char str[70];
+  	int d;
+
+  	printf("PELICULAS ACTUALES: \n");
+  	while(fgets(str, 100, f)) { //recorrer hasta que lea un 0
+    
+   
+   	printf("%s", str);
+
+    clear_if_needed(str); //siempre antes del siguiente fgets
+  }
+
+
+
 }
 
 int menu(void)
@@ -45,7 +124,7 @@ int menu(void)
 	clear_if_needed(str); 
 
 
-	len = sscanf(str, "%d", &option); //esto es apra que en caso de un numero metemos un String ppor ejemplo,en vez de dar error devuelve un 0 ( no puede transformar un String a un Integer)
+	len = sscanf(str, "%d", &option); 
 	printf("\n");
 
 	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 4 || option < 1)));
@@ -54,10 +133,7 @@ int menu(void)
 
 }
 
-void leerPelicula();
-void eliminarPelicula();
-void imprimirListado();
-void CalcularVentas();
+
 
 int main(void)
 {
@@ -74,22 +150,17 @@ int main(void)
 		{
 			case 1: 
 
-				{
-					printf("Primera opcion\n");
-					//leerPelicula(&peliculas[total], total); //el total nos señala la posicion del array, y con el & cogemos su direccion
-					//total++;
-				}
-				
+				anadirPelicula();				
 				break;
 
 			case 2: //eliminarPelicula();
-			printf("segunda opcion\n");
+			
 				break;
 
 
 			case 3: 
-				printf("tercera opcion\n");
-			//imprimirListado(peliculas, total); //le pasamos el array, pero esto no pasa el tamaño que tiene por tanto debemos pasar otro parametro que en este caso es total
+				
+				listaPelicula();
 				break;
 
 			case 4: 
@@ -103,7 +174,7 @@ int main(void)
 
 			
 		}
-	}while(option>4 | option<1);
+	}while(option!=0);
 
 	
 
