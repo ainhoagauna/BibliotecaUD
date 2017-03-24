@@ -29,24 +29,28 @@ int menu(void)
 {
 	char str[MAX_LENGHT];
 	int option;
+	int len;
 	do{
 
-	printf("Hola \n");
+	printf("BIENVENIDO A VIDEOCLUB UD!!\n");
 	printf("Indique su opcion: \n");
 	printf("1. Anadir pelicula\n");
 	printf("2. Eliminar pelicula\n");
 	printf("3. Lista de peliculas \n");
 	printf("4. Consultar ventas\n");
+	printf("(q para salir)\n");
 	printf("\n");
 
 	fgets(str, 50, stdin);
-	clear_if_needed(str);
-	sscanf(str, "%i", &option); 
+	clear_if_needed(str); 
 
-	printf("OPTION: %i\n",option );
 
-	}while(option>4 | option<1);
+	len = sscanf(str, "%d", &option); //esto es apra que en caso de un numero metemos un String ppor ejemplo,en vez de dar error devuelve un 0 ( no puede transformar un String a un Integer)
+	printf("\n");
+
+	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 4 || option < 1)));
 	
+	return (str[0] == 'q')?0:option;
 
 }
 
@@ -65,7 +69,6 @@ int main(void)
 
 	option=menu();
 
-	printf("OK\n");
 
 	switch (option)
 		{
@@ -95,15 +98,14 @@ int main(void)
 				break;
 
 			default:
-				printf("Adios\n");
 				return -1;
 				break;
 
 			
 		}
-	}while(option != 0);
+	}while(option>4 | option<1);
 
-	printf("OK2\n");
+	
 
 	return 0;
 }
