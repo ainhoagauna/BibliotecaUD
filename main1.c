@@ -12,6 +12,7 @@ typedef struct
 	double precio;
 	double valoracion;
 
+
 }Pelicula;
 
 int main(int argc, char **argv)
@@ -29,10 +30,9 @@ int main(int argc, char **argv)
 		printf("Se esperan recibir 3 argumentos. Ten en cuenta que se suma el nombre del archivo. \n");
 		exit(1);
 	}
-
 	if(argc == 3)
 	{		
-		if(strcmp(argv[1],admin)==0 && strcmp(argv[2],admin)==0)
+		if(strcmp(argv[1],"admin")==0 && strcmp(argv[2],"admin")==0)
 		{
 			do
 			{
@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 
 			return 0;
 		}
-		else if(strcmp(argv[1],usuario)==0 && strcmp(argv[2],usuario)==0)
+		else if(strcmp(argv[1],"usuario")==0 && strcmp(argv[2],"usuario")==0)
 		{
 			do
 			{
