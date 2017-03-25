@@ -14,50 +14,65 @@ typedef struct
 
 }Pelicula;
 
-int main(void)
+int main(int argc, char **argv)
 {
 	int option;
 	int total = 0;
 	Pelicula peliculas[MAX_LENGHT];
 
-	do{
+	printf("%d argumento(s) recibido(s). \n", argc);
 
-	option = menuAdmin();
+	if(argc < 3 || argc > 3)
+	{
+		printf("Se esperan recibir 3 argumentos. Ten en cuenta que se suma el nombre del archivo. \n");
+		exit(1);
+	}
 
-
-	switch (option)
+	if(argc == 3)
+	{
+		if(argv[2]=='admin' && argv[3]=='admin')
 		{
-			case 1: 
+			do
+			{
 
-				anyadirPelicula();				
-				break;
+				option = menuAdmin();
 
-			case 2: //eliminarPelicula();
+
+				switch (option)
+				{
+					case 1: 
+
+						anyadirPelicula();				
+						break;
+
+					case 2: //eliminarPelicula();
 			
-				break;
+						break;
 
 
-			case 3: 
+					case 3: 
 				
-				listaPelicula();
-				break;
+						listaPelicula();
+						break;
 
-			case 4: 
-			printf("cuarta opcion\n");
-			//printf("Ventas:%.2f\n", CalcularVentas(peliculas, total));
-				break;
+					case 4: 
+						printf("cuarta opcion\n");
+						//printf("Ventas:%.2f\n", CalcularVentas(peliculas, total));
+						break;
 
-			default:
-				return -1;
-				break;
-
+					default:
+						return -1;
+						break;
 			
+				}
+			}while(option!=0);	
+
+			return 0;
 		}
-	}while(option!=0);
+	}
+
 
 	
-
-	return 0;
 }
 
 
