@@ -19,6 +19,8 @@ int main(int argc, char **argv)
 	int option;
 	int total = 0;
 	Pelicula peliculas[MAX_LENGHT];
+	const char admin[5] = "admin";
+	const char usuario[7] = "usuario";
 
 	printf("%d argumento(s) recibido(s). \n", argc);
 
@@ -29,8 +31,8 @@ int main(int argc, char **argv)
 	}
 
 	if(argc == 3)
-	{
-		if(argv[2]=='admin' && argv[3]=='admin')
+	{		
+		if(strcmp(argv[1],admin)==0 && strcmp(argv[2],admin)==0)
 		{
 			do
 			{
@@ -67,8 +69,7 @@ int main(int argc, char **argv)
 
 			return 0;
 		}
-
-		if(argv[2] == 'usuario' && argv[3] == 'usuario')
+		else if(strcmp(argv[1],usuario)==0 && strcmp(argv[2],usuario)==0)
 		{
 			do
 			{
@@ -102,6 +103,11 @@ int main(int argc, char **argv)
 			}while(option != 0);	
 
 			return 0;
+		}
+		else
+		{
+			printf("Argumentos no reconocidos. Fin del programa.\n");
+			exit(1);
 		}
 	}
 
