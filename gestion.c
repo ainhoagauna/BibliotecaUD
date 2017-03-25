@@ -7,15 +7,6 @@
 
 void clear_if_needed(char *str);
 
-typedef struct
-{
-	char nombre;
-	char genero;
-	double precio;
-	double valoracion;
-
-}Pelicula;
-
 void listaPelicula()
 {
 	FILE *f;
@@ -99,6 +90,36 @@ int menuAdmin(void)
 		printf("(q para salir)\n");
 		printf("\n");
 
+		fgets(str, 50, stdin);
+		clear_if_needed(str); 
+
+		len = sscanf(str, "%d", &option); 
+		printf("\n");
+
+	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 4 || option < 1)));
+	
+	return (str[0] == 'q')?0:option;
+
+}
+
+int menuUsuario(void)
+{
+	char str[MAX_LENGHT];
+	int option;
+	int len;
+	do
+	{
+
+		printf("BIENVENIDO A VIDEOCLUB UD!!\n");
+		printf("Indique su opcion: \n");
+		/*
+		printf("1. Anadir pelicula\n");
+		printf("2. Eliminar pelicula\n");
+		printf("3. Lista de peliculas \n");
+		printf("4. Consultar ventas\n");
+		printf("(q para salir)\n");
+		printf("\n");
+		*/
 		fgets(str, 50, stdin);
 		clear_if_needed(str); 
 

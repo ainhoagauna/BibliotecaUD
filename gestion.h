@@ -7,4 +7,6 @@ void listaPelicula();
 
 int menuAdmin(void);
 
+int menuUsuario(void);
+
 #endif

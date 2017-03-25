@@ -37,7 +37,6 @@ int main(int argc, char **argv)
 
 				option = menuAdmin();
 
-
 				switch (option)
 				{
 					case 1: 
@@ -48,7 +47,6 @@ int main(int argc, char **argv)
 					case 2: //eliminarPelicula();
 			
 						break;
-
 
 					case 3: 
 				
@@ -66,6 +64,42 @@ int main(int argc, char **argv)
 			
 				}
 			}while(option!=0);	
+
+			return 0;
+		}
+
+		if(argv[2] == 'usuario' && argv[3] == 'usuario')
+		{
+			do
+			{
+
+				option = menuUsuario();
+
+
+				switch (option)
+				{
+					case 1: 
+									
+						break;
+
+					case 2: 
+			
+						break;
+
+					case 3: 				
+						
+						break;
+
+					case 4: 
+						
+						break;
+
+					default:
+						return -1;
+						break;
+			
+				}
+			}while(option != 0);	
 
 			return 0;
 		}
