@@ -73,6 +73,53 @@ void anyadirPelicula()
 
 }
 
+void eliminarPelicula()
+{
+	FILE *file, *fileAux;
+	Pelicula pelicula;
+
+	fileAux = fopen("peliculas_aux.txt", "wb");
+	file = fopen("peliculas.txt", "rb");
+
+	if(!file)
+	{
+		printf("El fichero de peliculas se encuentra vacio.\n");
+		menuAdmin();
+	}
+	else
+	{
+		char nombre[20];
+
+		printf("Introduzca el nombre de la pelicula a eliminar: \n");
+		fflush(stdin);
+		gets(nombre);
+		//Recibe los mismo parametros que fwrite
+		while(fread(&pelicula, sizeof(Pelicula),1,file))
+		{
+			if(!strcmp(pelicula.nombre, nombre))
+			{
+				fwrite(&pelicula, sizeof(Pelicula), 1, fileAux);
+			}
+		}
+
+		fileAux = fopen("peliculas_aux.txt", "rb");
+		file = fopen("peliculas.txt", "wb");
+
+		while(fread(&pelicula, sizeof(Pelicula), 1, fileAux))
+		{
+			fwrite(&pelicula, sizeof(Pelicula), 1, file);
+		}
+
+	}
+
+	printf("Pelicula eliminada.\n");
+	
+	fclose(file);
+	fclose(fileAux);
+	remove("peliculas_aux.txt");
+
+}
+
 int menuAdmin(void)
 {
 	char str[MAX_LENGHT];
@@ -83,7 +130,7 @@ int menuAdmin(void)
 
 		printf("BIENVENIDO A VIDEOCLUB UD!!\n");
 		printf("Indique su opcion: \n");
-		printf("1. Anadir pelicula\n");
+		printf("1. Anyadir pelicula\n");
 		printf("2. Eliminar pelicula\n");
 		printf("3. Lista de peliculas \n");
 		printf("4. Consultar ventas\n");
