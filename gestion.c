@@ -32,12 +32,71 @@ void listaPelicula()
 
 }
 
+void escribirPelicula(char* palabra)
+{
+	FILE *f;
+	f = fopen("peliculas.txt", "r");
+
+	char texto[80];
+
+    int i,tmp1,tmp2,konta=0;
+
+	while (feof(f)==0)
+
+      {
+      	
+            fgets(texto,80,f);
+
+            for(i=0;i<strlen(texto);i++)
+
+            {
+
+               if (palabra[0]==texto[i])
+
+               {
+               		
+                  tmp1=0;
+
+                  tmp2=i;
+
+                  while ((palabra[tmp1]==texto[tmp2])&&(tmp2<strlen(texto))&&(tmp1!=strlen(palabra)))
+
+                  {
+                        tmp1++;
+
+                        tmp2++;
+
+                        if (tmp1==strlen(palabra))
+
+                           konta++;
+                       
+                  }
+               }
+            }
+
+
+            
+      }
+
+     if(konta>0)
+      {
+      	printf("Ya existe una pelicula registrada con ese nombre\n");
+      	anyadirPelicula();
+      	
+
+      }
+
+      fclose(f);
+}
+
 void anyadirPelicula()
 {
 	char *str;
 	int d;
+	char palabra[30];
 	FILE *f;
-	f = fopen("peliculas.txt", "a");
+	f = fopen("peliculas.txt", "r");
+	
 
 	if(f==NULL)
 	{
@@ -47,9 +106,22 @@ void anyadirPelicula()
 
 	printf("Introduzca los datos de la nueva pelicula: \n");
 	printf("NOMBRE: \n");
-	fgets(str, MAX_LENGHT, stdin);
+	
+	gets(palabra);
+	
+	escribirPelicula(palabra);
+
 	clear_if_needed(str);
-	fprintf(f, "%s", str);
+	fprintf(f, "%s", palabra);
+	printf("OK\n");
+
+	//f=fopen("peliculas.txt", "a");
+	
+	
+    /*fgets(str, MAX_LENGHT, stdin);
+     
+	clear_if_needed(str);
+	fprintf(f, "%s", palabra);
 	
 	printf("GENERO: \n");
 	fgets(str, MAX_LENGHT, stdin);
@@ -68,7 +140,7 @@ void anyadirPelicula()
 
 	printf("PELICULA ANADIDA!!\n");
 	printf("\n");
-
+*/
 	fclose(f);
 
 }
@@ -123,24 +195,69 @@ void eliminarPelicula()
 
 void eliminarPelicula()
 {
-	FILE *file, *fileAux;
+	FILE *file;
 	Pelicula pelicula;
 
-	fileAux = fopen("peliculas_aux.txt", "w");
+	//fileAux = fopen("peliculas_aux.txt", "w");
 	file = fopen("peliculas.txt", "r");
 
-	if(!file)
+	if(file==NULL)
 	{
-		printf("El fichero de peliculas se encuentra vacio.\n");
+		printf("Archivo no encontado.\n");
 		menuAdmin();
 	}
-	else
-	{
-		char nombre[20];
 
-		printf("Introduzca el nombre de la pelicula a eliminar: \n");
-		fflush(stdin);
-		gets(nombre);
+	char palabra[30],texto[80];
+
+    int i,tmp1,tmp2,konta=0;
+
+     printf("Introduzca el titulo de pelicula completa:\n");
+     gets(palabra);
+
+	
+	char nombre[20];
+	
+	while (feof(file)==0)
+
+      {
+      	
+            fgets(texto,80,file);
+
+            for(i=0;i<strlen(texto);i++)
+
+            {
+
+               if (palabra[0]==texto[i])
+
+               {
+
+                  tmp1=0;
+
+                  tmp2=i;
+
+                  while ((palabra[tmp1]==texto[tmp2])&&(tmp2<strlen(texto))&&(tmp1!=strlen(palabra)))
+
+                  {
+                        tmp1++;
+
+                        tmp2++;
+
+                        if (tmp1==strlen(palabra))
+
+                           konta++;
+                  }
+               }
+            }
+
+
+            
+      }
+
+       printf("La palabra se repite en el texto %d veces",konta);
+
+      getchar();
+
+      fclose(file);
 }
 int menuAdmin(void)
 {
@@ -208,4 +325,7 @@ void clear_if_needed(char *str)
 		int c;    
     	while ( (c = getchar()) != EOF && c != '\n');
     }
+
 }
+
+

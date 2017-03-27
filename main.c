@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 
 					case 2: 
 
-						//eliminarPelicula();															
+						eliminarPelicula();															
 						break;
 
 					case 3: 
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 
 					case 4: 
 						printf("cuarta opcion\n");
-						//printf("Ventas:%.2f\n", CalcularVentas(peliculas, total));
+						
 						break;
 
 					default:
