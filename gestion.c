@@ -72,14 +72,14 @@ void anyadirPelicula()
 	fclose(f);
 
 }
-
+/*
 void eliminarPelicula()
 {
 	FILE *file, *fileAux;
 	Pelicula pelicula;
 
-	fileAux = fopen("peliculas_aux.txt", "wb");
-	file = fopen("peliculas.txt", "rb");
+	fileAux = fopen("peliculas_aux.txt", "w");
+	file = fopen("peliculas.txt", "r");
 
 	if(!file)
 	{
@@ -93,17 +93,17 @@ void eliminarPelicula()
 		printf("Introduzca el nombre de la pelicula a eliminar: \n");
 		fflush(stdin);
 		gets(nombre);
-		//Recibe los mismo parametros que fwrite
+		//Recibe los mismos parametros que fwrite
 		while(fread(&pelicula, sizeof(Pelicula),1,file))
 		{
-			if(!strcmp(pelicula.nombre, nombre))
+			if(strcmp(pelicula.nombre, nombre)!=0)
 			{
 				fwrite(&pelicula, sizeof(Pelicula), 1, fileAux);
 			}
 		}
 
-		fileAux = fopen("peliculas_aux.txt", "rb");
-		file = fopen("peliculas.txt", "wb");
+		fileAux = fopen("peliculas_aux.txt", "r");
+		file = fopen("peliculas.txt", "w");
 
 		while(fread(&pelicula, sizeof(Pelicula), 1, fileAux))
 		{
@@ -119,7 +119,29 @@ void eliminarPelicula()
 	remove("peliculas_aux.txt");
 
 }
+*/
 
+void eliminarPelicula()
+{
+	FILE *file, *fileAux;
+	Pelicula pelicula;
+
+	fileAux = fopen("peliculas_aux.txt", "w");
+	file = fopen("peliculas.txt", "r");
+
+	if(!file)
+	{
+		printf("El fichero de peliculas se encuentra vacio.\n");
+		menuAdmin();
+	}
+	else
+	{
+		char nombre[20];
+
+		printf("Introduzca el nombre de la pelicula a eliminar: \n");
+		fflush(stdin);
+		gets(nombre);
+}
 int menuAdmin(void)
 {
 	char str[MAX_LENGHT];

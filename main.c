@@ -4,16 +4,20 @@
 #include "gestion.h"
 
 #define MAX_LENGHT 50
+#define ADMIN_IN "admin"
+#define ADMIN_PASSWORD "admin"
+#define USU_IN "usuario"
+#define USU_PASSWORD "usuario"
 
 int main(int argc, char **argv)
 {
 	int option;
 	int total = 0;
 	Pelicula peliculas[MAX_LENGHT];
-	const char admin[5] = "admin";
-	const char usuario[7] = "usuario";
+	//const char admin[5] = "admin";
+	//const char usuario[7] = "usuario";
 
-	printf("%d argumento(s) recibido(s). \n", argc);
+	//printf("%d argumento(s) recibido(s). \n", argc);
 
 	if(argc < 3 || argc > 3)
 	{
@@ -22,7 +26,7 @@ int main(int argc, char **argv)
 	}
 	if(argc == 3)
 	{		
-		if(strcmp(argv[1],"admin")==0 && strcmp(argv[2],"admin")==0)
+		if(strcmp(argv[1],ADMIN_IN)==0 && strcmp(argv[2],ADMIN_PASSWORD)==0)
 		{
 			do
 			{
@@ -39,7 +43,7 @@ int main(int argc, char **argv)
 
 					case 2: 
 
-						eliminarPelicula();															
+						//eliminarPelicula();															
 						break;
 
 					case 3: 
@@ -62,7 +66,7 @@ int main(int argc, char **argv)
 
 			return 0;
 		}
-		else if(strcmp(argv[1],"usuario")==0 && strcmp(argv[2],"usuario")==0)
+		else if(strcmp(argv[1],USU_IN)==0 && strcmp(argv[2],USU_PASSWORD)==0)
 		{
 			do
 			{
@@ -99,7 +103,7 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			printf("Argumentos no reconocidos. Fin del programa.\n");
+			printf("Nombre y/o contraseña incorrectos\n");
 			exit(1);
 		}
 	}
