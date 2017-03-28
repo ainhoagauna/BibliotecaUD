@@ -1,47 +1,49 @@
-Pelicula 1
 Es por tu bien
 Comedia
-1€
-7.5
-
-Pelicula 2
+1.2
+Buena
 Lo que de verdad importa
 Comedia - Drama
-3.50€
-6.8
-
-Pelicula 3
+3.50
+Buena
 Multiple
 Thriller
-2€
-8.9
-
-Pelicula 4
+2.4
+Excelente
 Zona hostil
 Accion 
-1.50€
-7.6
-
-Pelicula 5
+1.50
+Buena
 Contratiempo
 Thriller
-1.90€
-8.4
-
-Pelicula 6
+1.90
+Excelente
 La la land
 Drama - Romance
-2.70€
-9.1
-
-Pelicula 7
+2.70
+Excelente
 Tenia que ser el
 comedia
-3.50€
-8.9
-
+3.50
+Excelente
 La Bella y la Bestia
 Animacion
-4.5?
-7.8
+4.5
+Buena
+Perdiendo el norte
+Comedia
+1.50
+Buena
+Princesa por sorpresa
+Animacion
+4
+Regular
+Contratiempo
+Infantil
+5
+Excelente
+El guardian invisible
+Thriller
+5
+Mala
 

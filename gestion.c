@@ -7,6 +7,41 @@
 
 void clear_if_needed(char *str);
 
+void ventas()
+{
+	FILE* f;
+
+	f=fopen("peliculas.txt", "r");
+
+	if(f==NULL)
+	{
+		printf("Archivo no encontrado\n");
+		
+	}
+
+
+	char str[30];
+
+	float e;
+	
+	float suma;
+
+	while(fgets(str, 50, f))
+   {
+   	
+       if(sscanf(str, "%f", &e)!=0)
+      {
+       		suma=suma+e;
+
+       		printf("%.2f\n", e );
+       }
+    }
+
+
+
+    printf("El precio total de las peliculas es: %.2f\n", suma );
+    printf("\n");
+}
 void listaPelicula()
 {
 	FILE *f;
@@ -32,7 +67,7 @@ void listaPelicula()
 
 }
 
-void escribirPelicula(char* palabra)
+void buscarPelicula(char* palabra)
 {
 	FILE *f;
 	f = fopen("peliculas.txt", "r");
@@ -95,7 +130,7 @@ void anyadirPelicula()
 	int d;
 	char palabra[30];
 	FILE *f;
-	f = fopen("peliculas.txt", "r");
+	f = fopen("peliculas.txt", "a");
 	
 
 	if(f==NULL)
@@ -109,41 +144,34 @@ void anyadirPelicula()
 	
 	gets(palabra);
 	
-	escribirPelicula(palabra);
+	buscarPelicula(palabra);
+	fprintf(f, "%s\n", palabra);
 
-	clear_if_needed(str);
-	fprintf(f, "%s", palabra);
-	printf("OK\n");
+	printf("GENERO:\n");
+	gets(palabra);
+	fprintf(f, "%s\n", palabra);
 
-	//f=fopen("peliculas.txt", "a");
-	
-	
-    /*fgets(str, MAX_LENGHT, stdin);
-     
-	clear_if_needed(str);
-	fprintf(f, "%s", palabra);
-	
-	printf("GENERO: \n");
-	fgets(str, MAX_LENGHT, stdin);
-	clear_if_needed(str);
-	fprintf(f, "%s", str);	
+	printf("PRECIO:\n");
+	printf("(Sin el signo del euro)\n" );
+	gets(palabra);
+	fprintf(f, "%s\n", palabra);
 
-	printf("PRECIO: \n");
-	fgets(str, MAX_LENGHT, stdin);
-	clear_if_needed(str);
-	fprintf(f, "%s", str);	
+	printf("VALORACION:\n");
+	printf("Muy mala/ Mala/Regular/Buena/Excelente\n");
+	gets(palabra);
+	fprintf(f, "%s\n", palabra);
 
-	printf("VALORACION: \n");
-	fgets(str, MAX_LENGHT, stdin);
-	clear_if_needed(str);
-	fprintf(f, "%s\n", str);	
 
 	printf("PELICULA ANADIDA!!\n");
 	printf("\n");
-*/
+
+
+	//menuAdmin();
 	fclose(f);
 
 }
+
+
 /*
 void eliminarPelicula()
 {

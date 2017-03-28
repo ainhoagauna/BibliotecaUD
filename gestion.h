@@ -6,10 +6,12 @@ typedef struct
 	char nombre;
 	char genero;
 	double precio;
-	double valoracion;
+	char valoracion;
 
 
 }Pelicula;
+
+void ventas();
 
 void anyadirPelicula();
 

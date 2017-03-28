@@ -37,8 +37,7 @@ int main(int argc, char **argv)
 				{
 					case 1: 
 
-						anyadirPelicula();
-						menuAdmin();				
+						anyadirPelicula();				
 						break;
 
 					case 2: 
@@ -49,12 +48,11 @@ int main(int argc, char **argv)
 					case 3: 
 				
 						listaPelicula();
-						menuAdmin();
 						break;
 
 					case 4: 
-						printf("cuarta opcion\n");
 						
+						ventas();						
 						break;
 
 					default:
