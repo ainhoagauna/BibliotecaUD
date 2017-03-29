@@ -67,7 +67,7 @@ void listaPelicula()
 
 }
 
-void buscarPelicula(char* palabra)
+int buscarPelicula(char* palabra)
 {
 	FILE *f;
 	f = fopen("peliculas.txt", "r");
@@ -116,7 +116,10 @@ void buscarPelicula(char* palabra)
      if(konta>0)
       {
       	printf("Ya existe una pelicula registrada con ese nombre\n");
-      	anyadirPelicula();
+      	printf("Introduzca los datos de la nueva pelicula: \n");
+		printf("NOMBRE: \n");
+		gets(palabra);
+      	buscarPelicula(palabra);
       	
 
       }
