@@ -168,8 +168,6 @@ void anyadirPelicula()
 	printf("PELICULA ANADIDA!!\n");
 	printf("\n");
 
-
-	//menuAdmin();
 	fclose(f);
 
 }
@@ -276,6 +274,7 @@ void eliminarPelicula()
                         if (tmp1==strlen(palabra))
 
                            konta++;
+                       	  
                   }
                }
             }
@@ -284,12 +283,13 @@ void eliminarPelicula()
             
       }
 
-       printf("La palabra se repite en el texto %d veces",konta);
+       
 
       getchar();
 
       fclose(file);
 }
+
 int menuAdmin(void)
 {
 	char str[MAX_LENGHT];

@@ -13,11 +13,7 @@ int main(int argc, char **argv)
 {
 	int option;
 	int total = 0;
-	Pelicula peliculas[MAX_LENGHT];
-	//const char admin[5] = "admin";
-	//const char usuario[7] = "usuario";
-
-	//printf("%d argumento(s) recibido(s). \n", argc);
+		
 
 	if(argc < 3 || argc > 3)
 	{
@@ -88,6 +84,7 @@ int main(int argc, char **argv)
 
 					case 4: 
 						
+						//comentarPelicula();
 						break;
 
 					default:
