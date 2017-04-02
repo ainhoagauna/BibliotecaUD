@@ -75,11 +75,11 @@ int main(int argc, char **argv)
 						break;
 
 					case 2: 
-			
+						listaPelicula();
 						break;
 
 					case 3: 				
-						listaPelicula();
+						verComentarios();
 						break;
 
 					case 4: 

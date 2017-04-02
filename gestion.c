@@ -321,6 +321,31 @@ void comentarPelicula()
 
 }
 
+void verComentarios()
+{
+	FILE *f;
+	f = fopen("comentarios.txt", "r");
+
+	if(f==NULL)
+	{
+		printf("Archivo no encontrado\n");
+	}
+	
+	char str[700];
+  	int d;
+
+  	printf("COMENTARIOS ACTUALES: \n");
+  	while(fgets(str, 100, f)) 
+  	{ 
+  		//recorrer hasta que lea un 0
+      
+   		printf("%s", str);
+
+    	clear_if_needed(str); //siempre antes del siguiente fgets
+ 	}
+
+}
+
 int menuAdmin(void)
 {
 	char str[MAX_LENGHT];
@@ -362,8 +387,8 @@ int menuUsuario(void)
 		printf("Indique su opcion: \n");
 		
 		printf("1. Alquilar pelicula\n");
-		printf("2. Devolver pelicula\n");
-		printf("3. Lista de peliculas \n");
+		printf("2. Lista de peliculas\n");
+		printf("3. Ver comentarios \n");
 		printf("4. Valorar pelicula\n");
 		printf("(q para salir)\n");
 		printf("\n");

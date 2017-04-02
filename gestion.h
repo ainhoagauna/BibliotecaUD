@@ -19,6 +19,8 @@ void eliminarPelicula();
 
 void comentarPelicula();
 
+void verComentarios();
+
 void listaPelicula();
 
 int menuAdmin(void);
