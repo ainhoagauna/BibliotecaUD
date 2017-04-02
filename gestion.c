@@ -290,6 +290,37 @@ void eliminarPelicula()
       fclose(file);
 }
 
+void comentarPelicula()
+{
+	char *str;
+	int d;
+	char palabra[30];
+	FILE *f;
+	f = fopen("comentarios.txt", "a");	
+
+	if(f==NULL)
+	{
+		printf("Archivo no encontrado\n");
+		exit(1);
+	}
+
+	printf("Introduzca el nombre de la pelicula a comentar: \n");
+	printf("NOMBRE: \n");
+	
+	gets(palabra);
+	fprintf(f, "\n%s\n", palabra);
+
+	printf("COMENTARIO:\n");
+	gets(palabra);
+	fprintf(f, "%s.\n", palabra);
+
+	printf("COMENTARIO ANYADIDO!!\n");
+	printf("\n");
+
+	fclose(f);
+
+}
+
 int menuAdmin(void)
 {
 	char str[MAX_LENGHT];
