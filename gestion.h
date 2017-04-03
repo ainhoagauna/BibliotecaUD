@@ -17,6 +17,8 @@ void anyadirPelicula();
 
 void eliminarPelicula();
 
+void alquilarPelicula();
+
 void comentarPelicula();
 
 void verComentarios();

@@ -8,11 +8,14 @@
 #define ADMIN_PASSWORD "admin"
 #define USU_IN "usuario"
 #define USU_PASSWORD "usuario"
+#define MAX_PELICULAS 	5
 
 int main(int argc, char **argv)
 {
 	int option;
 	int total = 0;
+
+	Pelicula peliculas[MAX_PELICULAS];
 		
 
 	if(argc < 3 || argc > 3)
@@ -70,9 +73,18 @@ int main(int argc, char **argv)
 
 				switch (option)
 				{
-					case 1: 
-									
-						break;
+					case 1:
+
+					if (total < MAX_PELICULAS) 
+					{
+						alquilarPelicula(&peliculas[total], total);
+						total++;
+					} else
+					{
+						printf("No puedes alquilar mas peliculas\n");
+					}
+					break;	
+
 
 					case 2: 
 						listaPelicula();

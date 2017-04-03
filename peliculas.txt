@@ -29,4 +29,8 @@ Excelente
 La Bella y la Bestia
 Animacion
 4.5
-Buena
+BuenaTarzan
+Animacion
+2,6
+Excelente
+5

@@ -171,7 +171,18 @@ void anyadirPelicula()
 	fclose(f);
 
 }
+void alquilarPelicula(Pelicula *a, int total)
+{
 
+	char palabra[30];
+	printf("Introduzca el titulo de la pelicula que desea alquilar: \n");
+	gets(palabra);
+	printf("Has alquilado la pelicula: %s\n", palabra);
+	printf("\n");
+	printf("Peliculas alquiladas: (%d)\n", total + 1);
+	printf("\n");
+	
+}
 
 /*
 void eliminarPelicula()
@@ -335,7 +346,7 @@ void verComentarios()
   	int d;
 
   	printf("COMENTARIOS ACTUALES: \n");
-  	while(fgets(str, 100, f)) 
+  	while(fgets(str, 1000, f)) 
   	{ 
   		//recorrer hasta que lea un 0
       
