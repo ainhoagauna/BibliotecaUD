@@ -243,13 +243,28 @@ void alquilarPelicula(Pelicula *a, int total)
 
 		printf("Introduzca el titulo de la pelicula que desea alquilar: \n");
 		gets(palabra);
+		fgets(palabra,30,stdin);
 		compararPelicula(palabra);
 		printf("Peliculas alquiladas: (%d)\n", total + 1);
 		printf("\n");  
+	
 		
 }
 
+void imprimirAlquiladas(Pelicula a[], int total)
+{
+	
+	int i;
 
+	printf("Listado de peliculas alquiladas \n\n");	
+
+	for (i = 0; i <total+1; i++)
+	{
+		printf("Pelicula--> titulo: %d\n",a[i].nombre);
+		printf("\n");
+	}
+	printf("------------------------------\n");
+}
 
 /*
 void eliminarPelicula()
@@ -435,7 +450,7 @@ int menuAdmin(void)
 		printf("BIENVENIDO A VIDEOCLUB UD!!\n");
 		printf("Indique su opcion: \n");
 		printf("1. Anyadir pelicula\n");
-		printf("2. Eliminar pelicula\n");
+		printf("2. nada\n");
 		printf("3. Lista de peliculas \n");
 		printf("4. Consultar ventas\n");
 		printf("(q para salir)\n");
@@ -468,6 +483,7 @@ int menuUsuario(void)
 		printf("2. Lista de peliculas\n");
 		printf("3. Ver comentarios \n");
 		printf("4. Valorar pelicula\n");
+		printf("5. Listado de peliculas alquiladas\n");
 		printf("(q para salir)\n");
 		printf("\n");
 		
@@ -477,7 +493,7 @@ int menuUsuario(void)
 		len = sscanf(str, "%d", &option); 
 		printf("\n");
 
-	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 4 || option < 1)));
+	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 5 || option < 1)));
 	
 	return (str[0] == 'q')?0:option;
 

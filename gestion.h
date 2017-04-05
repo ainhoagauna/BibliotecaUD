@@ -15,7 +15,7 @@ void ventas();
 
 void anyadirPelicula();
 
-void eliminarPelicula();
+void imprimirAlquiladas();
 
 void alquilarPelicula();
 

@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 
 					case 2: 
 
-						eliminarPelicula();															
+																					
 						break;
 
 					case 3: 
@@ -97,6 +97,10 @@ int main(int argc, char **argv)
 					case 4: 
 						
 						comentarPelicula();
+						break;
+					case 5:
+					
+						imprimirAlquiladas();
 						break;
 
 					default:
