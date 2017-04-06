@@ -239,12 +239,19 @@ int compararPelicula(char* palabra)
 }
 void alquilarPelicula(Pelicula *a, int total)
 {
-	char palabra[30];
+	char str[MAX_LENGHT];
+	char frm_str[MAX_LENGHT];
 
 		printf("Introduzca el titulo de la pelicula que desea alquilar: \n");
-		gets(palabra);
-		fgets(palabra,30,stdin);
-		compararPelicula(palabra);
+		fgets(str,MAX_LENGHT,stdin);
+		compararPelicula(str);
+		clear_if_needed(str);
+		sscanf(str, "%s", frm_str);
+
+		a->nombre=(char *)malloc((strlen(frm_str) + 1) *sizeof (char));
+		strcpy(a->nombre, frm_str); 
+		
+		
 		printf("Peliculas alquiladas: (%d)\n", total + 1);
 		printf("\n");  
 	
@@ -260,7 +267,7 @@ void imprimirAlquiladas(Pelicula a[], int total)
 
 	for (i = 0; i <total+1; i++)
 	{
-		printf("Pelicula--> titulo: %d\n",a[i].nombre);
+		printf("Pelicula--> titulo: %s\n",a[i].nombre);
 		printf("\n");
 	}
 	printf("------------------------------\n");

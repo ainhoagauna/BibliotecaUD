@@ -3,7 +3,7 @@
 
 typedef struct
 {
-	char nombre;
+	char *nombre;
 	char genero;
 	double precio;
 	char valoracion;
