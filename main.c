@@ -40,16 +40,11 @@ int main(int argc, char **argv)
 						break;
 
 					case 2: 
-
-																					
-						break;
-
-					case 3: 
 				
 						listaPelicula();
 						break;
 
-					case 4: 
+					case 3: 
 						
 						ventas();						
 						break;
@@ -61,7 +56,6 @@ int main(int argc, char **argv)
 				}
 			}while(option!=0);	
 
-			return 0;
 		}
 		else if(strcmp(argv[1],USU_IN)==0 && strcmp(argv[2],USU_PASSWORD)==0)
 		{
@@ -109,8 +103,6 @@ int main(int argc, char **argv)
 			
 				}
 			}while(option != 0);	
-
-			return 0;
 		}
 		else
 		{
@@ -118,6 +110,7 @@ int main(int argc, char **argv)
 			exit(1);
 		}
 	}
+	return 0;
 
 
 	

@@ -1,37 +1,44 @@
-Es por tu bien
-Comedia
-1.2
-Buena
-Lo que de verdad importa
-Comedia - Drama
-7.50
-Mala
-Multiple
-Thriller
-12.4
-Excelente
-Zona hostil
-Accion 
-5.50
-Buena
-Contratiempo
-Thriller
-11.90
-Excelente
-La la land
-Drama - Romance
-7.70
-Excelente
-Tenia que ser el
-Comedia
-3.50
-Excelente
-La Bella y la Bestia
-Animacion
-4.5
-Buena
 Tarzan
 Animacion
 2,6
 Excelente
 
+Cenicienta
+Animacion
+2,6
+Buena
+
+Spirit
+Animacion
+4,6
+Excelente
+
+Frozen
+Animacion
+5,5
+Buena
+
+Rocky
+Accion
+2,8
+Buena
+
+Titanic
+Romance
+3,4
+Buena
+
+Batman
+Accion y ficcion
+1,5
+Regular
+
+Spiderman
+Accion y ficcion
+4,6
+Buena
+
+Superman
+Accion y ficcion
+4
+Regular

@@ -162,7 +162,7 @@ void anyadirPelicula()
 	printf("VALORACION:\n");
 	printf("Muy mala/ Mala/Regular/Buena/Excelente\n");
 	gets(palabra);
-	fprintf(f, "%s", palabra);
+	fprintf(f, "%s\n", palabra);
 
 
 	printf("PELICULA ANADIDA!!\n");
@@ -328,6 +328,7 @@ void verComentarios()
 
     	clear_if_needed(str); //siempre antes del siguiente fgets
  	}
+ 	fclose(f);
 
 }
 
@@ -342,9 +343,8 @@ int menuAdmin(void)
 		printf("BIENVENIDO A VIDEOCLUB UD!!\n");
 		printf("Indique su opcion: \n");
 		printf("1. Anyadir pelicula\n");
-		printf("2. nada\n");
-		printf("3. Lista de peliculas \n");
-		printf("4. Consultar ventas\n");
+		printf("2. Lista de peliculas \n");
+		printf("3. Consultar ventas\n");
 		printf("(q para salir)\n");
 		printf("\n");
 
@@ -354,7 +354,7 @@ int menuAdmin(void)
 		len = sscanf(str, "%d", &option); 
 		printf("\n");
 
-	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 4 || option < 1)));
+	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 3 || option < 1)));
 	
 	return (str[0] == 'q')?0:option;
 
@@ -367,7 +367,7 @@ int menuUsuario(void)
 	int len;
 	do
 	{
-
+		printf("\n");
 		printf("BIENVENIDO A VIDEOCLUB UD!!\n");
 		printf("Indique su opcion: \n");
 		

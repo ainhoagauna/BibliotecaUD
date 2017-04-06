@@ -15,9 +15,9 @@ void ventas();
 
 void anyadirPelicula();
 
-void imprimirAlquiladas();
+void imprimirAlquiladas(Pelicula a[], int total);
 
-void alquilarPelicula();
+void alquilarPelicula(Pelicula *a, int total);
 
 void comentarPelicula();
 
