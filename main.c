@@ -100,7 +100,7 @@ int main(int argc, char **argv)
 						break;
 					case 5:
 					
-						imprimirAlquiladas();
+						imprimirAlquiladas(peliculas, total);
 						break;
 
 					default:

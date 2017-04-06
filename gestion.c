@@ -162,7 +162,7 @@ void anyadirPelicula()
 	printf("VALORACION:\n");
 	printf("Muy mala/ Mala/Regular/Buena/Excelente\n");
 	gets(palabra);
-	fprintf(f, "%s\n", palabra);
+	fprintf(f, "%s", palabra);
 
 
 	printf("PELICULA ANADIDA!!\n");
@@ -262,133 +262,18 @@ void imprimirAlquiladas(Pelicula a[], int total)
 {
 	
 	int i;
-
+	printf("Total: %d\n", total);
 	printf("Listado de peliculas alquiladas \n\n");	
 
-	for (i = 0; i <total+1; i++)
+	for (i = 0; i <total; i++)
 	{
-		printf("Pelicula--> titulo: %s\n",a[i].nombre);
+		printf("Pelicula-->  %s\n", a[i].nombre);
 		printf("\n");
 	}
 	printf("------------------------------\n");
 }
 
-/*
-void eliminarPelicula()
-{
-	FILE *file, *fileAux;
-	Pelicula pelicula;
 
-	fileAux = fopen("peliculas_aux.txt", "w");
-	file = fopen("peliculas.txt", "r");
-
-	if(!file)
-	{
-		printf("El fichero de peliculas se encuentra vacio.\n");
-		menuAdmin();
-	}
-	else
-	{
-		char nombre[20];
-
-		printf("Introduzca el nombre de la pelicula a eliminar: \n");
-		fflush(stdin);
-		gets(nombre);
-		//Recibe los mismos parametros que fwrite
-		while(fread(&pelicula, sizeof(Pelicula),1,file))
-		{
-			if(strcmp(pelicula.nombre, nombre)!=0)
-			{
-				fwrite(&pelicula, sizeof(Pelicula), 1, fileAux);
-			}
-		}
-
-		fileAux = fopen("peliculas_aux.txt", "r");
-		file = fopen("peliculas.txt", "w");
-
-		while(fread(&pelicula, sizeof(Pelicula), 1, fileAux))
-		{
-			fwrite(&pelicula, sizeof(Pelicula), 1, file);
-		}
-
-	}
-
-	printf("Pelicula eliminada.\n");
-	
-	fclose(file);
-	fclose(fileAux);
-	remove("peliculas_aux.txt");
-
-}
-*/
-
-void eliminarPelicula()
-{
-	FILE *file;
-	Pelicula pelicula;
-
-	//fileAux = fopen("peliculas_aux.txt", "w");
-	file = fopen("peliculas.txt", "r");
-
-	if(file==NULL)
-	{
-		printf("Archivo no encontado.\n");
-		menuAdmin();
-	}
-
-	char palabra[30],texto[80];
-
-    int i,tmp1,tmp2,konta=0;
-
-     printf("Introduzca el titulo de pelicula completa:\n");
-     gets(palabra);
-
-	
-	char nombre[20];
-	
-	while (feof(file)==0)
-
-      {
-      	
-            fgets(texto,80,file);
-
-            for(i=0;i<strlen(texto);i++)
-
-            {
-
-               if (palabra[0]==texto[i])
-
-               {
-
-                  tmp1=0;
-
-                  tmp2=i;
-
-                  while ((palabra[tmp1]==texto[tmp2])&&(tmp2<strlen(texto))&&(tmp1!=strlen(palabra)))
-
-                  {
-                        tmp1++;
-
-                        tmp2++;
-
-                        if (tmp1==strlen(palabra))
-
-                           konta++;
-                       	  
-                  }
-               }
-            }
-
-
-            
-      }
-
-       
-
-      getchar();
-
-      fclose(file);
-}
 
 void comentarPelicula()
 {
@@ -515,5 +400,12 @@ void clear_if_needed(char *str)
     }
 
 }
+void liberarMemoria(Pelicula *a, int total)
+{
+	int i;
+	for (i = 0; i < total; i++)
+		free(a[i].nombre);
+}
+
 
 
