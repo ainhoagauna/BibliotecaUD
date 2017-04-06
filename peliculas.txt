@@ -2,42 +2,34 @@ Tarzan
 Animacion
 2,6
 Excelente
-
 Cenicienta
 Animacion
 2,6
 Buena
-
 Spirit
 Animacion
 4,6
 Excelente
-
 Frozen
 Animacion
 5,5
 Buena
-
 Rocky
 Accion
 2,8
 Buena
-
 Titanic
 Romance
 3,4
 Buena
-
 Batman
 Accion y ficcion
 1,5
 Regular
-
 Spiderman
 Accion y ficcion
 4,6
 Buena
-
 Superman
 Accion y ficcion
 4
