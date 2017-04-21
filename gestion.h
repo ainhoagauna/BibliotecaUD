@@ -1,13 +1,16 @@
 #ifndef _GESTION_H_
 #define _GESTION_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct
 {
 	char *nombre;
 	char genero;
 	double precio;
 	char valoracion;
-
 
 }Pelicula;
 
@@ -28,5 +31,9 @@ void listaPelicula();
 int menuAdmin(void);
 
 int menuUsuario(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
