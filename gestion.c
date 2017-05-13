@@ -143,10 +143,8 @@ void anyadirPelicula()
 	}
 
 	printf("Introduzca los datos de la nueva pelicula: \n");
-	printf("NOMBRE: \n");
-	
-	gets(palabra);
-	
+	printf("NOMBRE: \n");	
+	gets(palabra);	
 	buscarPelicula(palabra);
 	fprintf(f, "%s\n", palabra);
 
@@ -162,7 +160,7 @@ void anyadirPelicula()
 	printf("VALORACION:\n");
 	printf("Muy mala/ Mala/Regular/Buena/Excelente\n");
 	gets(palabra);
-	fprintf(f, "\n%s\n", palabra);
+	fprintf(f, "%s\n", palabra);
 
 
 	printf("PELICULA ANADIDA!!\n");
