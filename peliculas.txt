@@ -34,3 +34,8 @@ Superman
 Accion y ficcion
 4
 Regular
+Lilo
+Anim
+3
+
+Muy mala

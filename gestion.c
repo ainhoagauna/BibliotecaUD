@@ -162,7 +162,7 @@ void anyadirPelicula()
 	printf("VALORACION:\n");
 	printf("Muy mala/ Mala/Regular/Buena/Excelente\n");
 	gets(palabra);
-	fprintf(f, "%s\n", palabra);
+	fprintf(f, "\n%s\n", palabra);
 
 
 	printf("PELICULA ANADIDA!!\n");
