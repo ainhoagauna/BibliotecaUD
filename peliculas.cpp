@@ -5,7 +5,7 @@ using namespace std;
 namespace contenedorPeliculas{
 
 
-	Peliculas::Peliculas(string titulo, string genero, double precio, string valoracion)
+	peliculas::peliculas(string titulo, string genero, double precio, string valoracion)
 	{
 	this->titulo=titulo;
 	this->genero=genero;
@@ -14,23 +14,23 @@ namespace contenedorPeliculas{
 	}	
 
 	//metodos set de las variables
-	void Peliculas::setTitulo(string titulo)
+	void peliculas::setTitulo(string titulo)
 	{
 		this->titulo=titulo;
 	}
-	void Peliculas::setGenero(string genero)
+	void peliculas::setGenero(string genero)
 	{
 		this->genero=genero;
 	}
-	void Peliculas::setPrecio(double precio)
+	void peliculas::setPrecio(double precio)
 	{
 		this->precio=precio;
 	}
-	void Peliculas::setValoracion(string valoracion)
+	void peliculas::setValoracion(string valoracion)
 	{
 		this->valoracion=valoracion;
 	}
-	void Peliculas::setPelicula(string titulo, string genero, double precio, string valoracion)
+	void peliculas::setPelicula(string titulo, string genero, double precio, string valoracion)
 	{
 		this->titulo=titulo;
 		this->genero=genero;
@@ -42,20 +42,20 @@ namespace contenedorPeliculas{
 
 	//metodos get de las variables
 
-	string Peliculas::getTitulo(string titulo)
+	string peliculas::getTitulo(string titulo)
 	{
 		return this->titulo;
 	}
 
-	string Peliculas::getGenero() const
+	string peliculas::getGenero() const
 	{
 		return this->genero;
 	}
-	double Peliculas::getPrecio() const
+	double peliculas::getPrecio() const
 	{
 		return this->precio;
 	}
-	string Peliculas::getValoracion() const
+	string peliculas::getValoracion() const
 	{
 		return this->valoracion;
 	}
