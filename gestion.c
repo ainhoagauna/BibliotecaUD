@@ -146,7 +146,7 @@ void anyadirPelicula()
 	printf("NOMBRE: \n");	
 	gets(palabra);	
 	buscarPelicula(palabra);
-	fprintf(f, "%s\n", palabra);
+	fprintf(f, "%[^\n]s\n", palabra);
 
 	printf("GENERO:\n");
 	gets(palabra);
@@ -160,7 +160,7 @@ void anyadirPelicula()
 	printf("VALORACION:\n");
 	printf("Muy mala/ Mala/Regular/Buena/Excelente\n");
 	gets(palabra);
-	fprintf(f, "%s\n", palabra);
+	fprintf(f, "%[^\n]s\n", palabra);
 
 
 	printf("PELICULA ANADIDA!!\n");
@@ -244,7 +244,7 @@ void alquilarPelicula(Pelicula *a, int total)
 		fgets(str,MAX_LENGHT,stdin);
 		compararPelicula(str);
 		clear_if_needed(str);
-		sscanf(str, "%s", frm_str);
+		sscanf(str, "%[^\n]s", frm_str);
 
 		a->nombre=(char *)malloc((strlen(frm_str) + 1) *sizeof (char));
 		strcpy(a->nombre, frm_str); 
@@ -261,14 +261,25 @@ void imprimirAlquiladas(Pelicula a[], int total)
 	
 	int i;
 	printf("Total: %d\n", total);
-	printf("Listado de peliculas alquiladas \n\n");	
+
+	if(total==0)
+	{
+		printf("OKKKK\n");
+		cout<< "No tienes ninguna pelicula alquilada" << endl; 
+	}
+
+	else
+	{
+		printf("Listado de peliculas alquiladas: \n\n");	
 
 	for (i = 0; i <total; i++)
 	{
-		printf("Pelicula-->  %s\n", a[i].nombre);
+		printf("Pelicula--> %[^\n]s\n", a[i].nombre);
 		printf("\n");
 	}
 	printf("------------------------------\n");
+	}
+	
 }
 
 
