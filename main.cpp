@@ -6,6 +6,8 @@
 
 using namespace std;
 
+void clear_if_needed(char *str);
+
 #define MAX_LENGHT 50
 #define ADMIN_IN "admin"
 #define ADMIN_PASSWORD "admin"
@@ -117,6 +119,65 @@ int main(int argc, char **argv)
 
 
 	
+}
+
+int menuAdmin(void)
+{
+	char str[MAX_LENGHT];
+	int option;
+	int len;
+	do
+	{
+
+		printf("BIENVENIDO A VIDEOCLUB UD!!\n");
+		printf("Indique su opcion: \n");
+		printf("1. Anyadir pelicula\n");
+		printf("2. Lista de peliculas \n");
+		printf("3. Consultar ventas\n");
+		printf("(q para salir)\n");
+		printf("\n");
+
+		fgets(str, 50, stdin);
+		clear_if_needed(str); 
+
+		len = sscanf(str, "%d", &option); 
+		printf("\n");
+
+	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 3 || option < 1)));
+	
+	return (str[0] == 'q')?0:option;
+
+}
+
+int menuUsuario(void)
+{
+	char str[MAX_LENGHT];
+	int option;
+	int len;
+	do
+	{
+		printf("\n");
+		printf("BIENVENIDO A VIDEOCLUB UD!!\n");
+		printf("Indique su opcion: \n");
+		
+		printf("1. Alquilar pelicula\n");
+		printf("2. Lista de peliculas\n");
+		printf("3. Ver comentarios \n");
+		printf("4. Valorar pelicula\n");
+		printf("5. Listado de peliculas alquiladas\n");
+		printf("(q para salir)\n");
+		printf("\n");
+		
+		fgets(str, 50, stdin);
+		clear_if_needed(str); 
+
+		len = sscanf(str, "%d", &option); 
+		printf("\n");
+
+	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 5 || option < 1)));
+	
+	return (str[0] == 'q')?0:option;
+
 }
 
 
