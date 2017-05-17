@@ -3,8 +3,13 @@
 #include <stdlib.h>
 #include "gestion.h"
 
+#include <iostream>
+
+using namespace std;
+
 #define MAX_LENGHT 50
 
+void liberarMemoria(Pelicula *a, int total);
 void clear_if_needed(char *str);
 
 void ventas()
@@ -247,11 +252,12 @@ void alquilarPelicula(Pelicula *a, int total)
 		sscanf(str, "%[^\n]s", frm_str);
 
 		a->nombre=(char *)malloc((strlen(frm_str) + 1) *sizeof (char));
-		strcpy(a->nombre, frm_str); 
-		
+		strcpy(a->nombre, frm_str); 		
 		
 		printf("Peliculas alquiladas: (%d)\n", total + 1);
 		printf("\n");  
+
+		liberarMemoria(a, total);
 	
 		
 }

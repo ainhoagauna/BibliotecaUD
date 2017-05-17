@@ -2,6 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include "gestion.h"
+#include <iostream>
+
+using namespace std;
 
 #define MAX_LENGHT 50
 #define ADMIN_IN "admin"
