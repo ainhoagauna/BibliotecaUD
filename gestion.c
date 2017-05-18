@@ -280,7 +280,7 @@ void imprimirAlquiladas(Pelicula a[], int total)
 
 	for (i = 0; i <total; i++)
 	{
-		printf("Pelicula--> %[^\n]s\n", a[i].nombre);
+		printf("Pelicula--> %s\n", a[i].nombre);
 		printf("\n");
 	}
 	printf("------------------------------\n");
