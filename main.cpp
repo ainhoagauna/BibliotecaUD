@@ -54,6 +54,10 @@ int main(int argc, char **argv)
 						ventas();						
 						break;
 
+					case 4:
+
+						altaUsuario();
+						break;
 					default:
 						return -1;
 						break;
@@ -134,6 +138,7 @@ int menuAdmin(void)
 		printf("1. Anyadir pelicula\n");
 		printf("2. Lista de peliculas \n");
 		printf("3. Consultar ventas\n");
+		printf("4. Alta usuario\n");
 		printf("(q para salir)\n");
 		printf("\n");
 
@@ -143,7 +148,7 @@ int menuAdmin(void)
 		len = sscanf(str, "%d", &option); 
 		printf("\n");
 
-	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 3 || option < 1)));
+	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 4 || option < 1)));
 	
 	return (str[0] == 'q')?0:option;
 
