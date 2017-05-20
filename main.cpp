@@ -2,9 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include "gestion.h"
+#include "gestion.hpp"
 #include "Persona.hpp"
 #include "Usuario.hpp"
 #include <iostream>
+
 
 using namespace std;
 
@@ -60,6 +62,7 @@ int main(int argc, char **argv)
 
 						altaUsuario();
 						break;
+
 					default:
 						return -1;
 						break;
@@ -188,7 +191,21 @@ int menuUsuario(void)
 }
 
 
+void clear_if_needed(char *str)
+{
+	if (str[strlen(str) - 1] != '\n')
+	{
+		int c;    
+    	while ( (c = getchar()) != EOF && c != '\n');
+    }
 
+}
+void liberarMemoria(Pelicula *a, int total)
+{
+	int i;
+	for (i = 0; i < total; i++)
+		free(a[i].nombre);
+}
 
 
 

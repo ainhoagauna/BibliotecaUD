@@ -4,12 +4,14 @@
 #include "Persona.hpp"
 
 using namespace std;
+
 class Usuario : public Persona
 {
 	int num_socio;
 public:
-	Usuario(const char* nombre, const char* apellido, int num_socio);
-	
+
+	Usuario();
+	Usuario(const char* nombre, const char* apellido, int num_socio);	
 
 	void getNum_socio(int num_socio);
 

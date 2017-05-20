@@ -1,6 +1,10 @@
 #include "Usuario.hpp"
 #include <iostream>
 
+Usuario::Usuario()
+{
+	
+}
 Usuario::Usuario(const char* nombre, const char* apellido, int num_socio) : Persona(nombre, apellido)
 {
 	this->num_socio=num_socio;

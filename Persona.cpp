@@ -1,6 +1,6 @@
 #include "Persona.hpp"
 #include "string.h"
-#include <iostream>
+
 
 Persona::Persona(const char* nombre, const char* apellido)
 	{

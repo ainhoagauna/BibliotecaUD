@@ -1,25 +1,15 @@
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <iostream>
 #include "gestion.h"
-#include "Usuario.hpp"
-#include "Persona.hpp"
-
-using namespace std;
 
 #define MAX_LENGHT 50
 
 void liberarMemoria(Pelicula *a, int total);
+
 void clear_if_needed(char *str);
 
-void altaUsuario()
-{
-	Usuario u1;
-	cout<< "Introduzca los datos del usuario nuevo: "<<endl;
-	cin>>u1;
-}
+
 void ventas()
 {
 	FILE* f;
@@ -278,8 +268,7 @@ void imprimirAlquiladas(Pelicula a[], int total)
 
 	if(total==0)
 	{
-		printf("OKKKK\n");
-		cout<< "No tienes ninguna pelicula alquilada" << endl; 
+		printf("No tienes ninguna pelicula alquilada\n");
 	}
 
 	else
