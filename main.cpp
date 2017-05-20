@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "gestion.h"
+#include "Persona.hpp"
+#include "Usuario.hpp"
 #include <iostream>
 
 using namespace std;

@@ -5,6 +5,7 @@
 extern "C" {
 #endif
 
+using namespace std;
 typedef struct
 {
 	char *nombre;
@@ -13,6 +14,8 @@ typedef struct
 	char valoracion;
 
 }Pelicula;
+
+void altaUsuario();
 
 void ventas();
 
