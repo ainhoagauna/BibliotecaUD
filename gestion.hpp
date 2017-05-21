@@ -3,6 +3,7 @@
 
 #include "Admin.hpp"
 #include "Persona.hpp"
+#include "Usuario.hpp"
 
 
 void altaUsuario();

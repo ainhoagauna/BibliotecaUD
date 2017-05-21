@@ -7,6 +7,7 @@
 #include "Usuario.hpp"
 #include "Admin.hpp"
 #include <iostream>
+#include "string"
 
 
 using namespace std;

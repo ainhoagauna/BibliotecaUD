@@ -1,21 +1,32 @@
 #include <iostream>
 #include "Admin.hpp"
+#include "Usuario.hpp"
 #include "Persona.hpp"
 #include "gestion.hpp"
 #include <iostream>
 #include <fstream>
+#include "string"
 
 using namespace std;
 
 void altaUsuario()
 {
 	
-	/*
-	Usuario u1;
 	cout<< "Introduzca los datos del usuario nuevo: "<<endl;
-	cin>>u1;
-*/
+	cout<< " "<<endl;
+	cout<< "Nombre: "<<endl;
+	//string nombre;
+	//cin>> nombre;
+	//cout<< "Hola: "<< nombre <<endl;
+
+	cout<< "Apellido: "<<endl;
+	//string apellido;
+	//cin>> apellido;
+	cout<< "Numero de socio: "<<endl;
+	//string num_socio;
+	//cin>>num_socio;
 	
+	//Usuario *u=new Usuario(nombre,apellido, num_socio);
 }
 
 
@@ -38,7 +49,7 @@ void datosAdmin()
 {
 	cout<< "Hola"<<endl;
 
-	Admin a = new Admin("Pepito", "Palotes", 1000);
+	Admin *a = new Admin("Pepito", "Palotes", 1000);
 
 
 	Persona *p2 = a; //aun siendo abstracta puedo seguir usandolo
@@ -62,8 +73,7 @@ void datosAdmin()
 
 	//ofstream fs("Administrador.txt"); 
 
-  
-   fs << p2<< endl;
+   fs << a << endl;
   
    fs.close();
 
