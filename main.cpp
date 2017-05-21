@@ -5,6 +5,7 @@
 #include "gestion.hpp"
 #include "Persona.hpp"
 #include "Usuario.hpp"
+#include "Admin.hpp"
 #include <iostream>
 
 
@@ -61,6 +62,11 @@ int main(int argc, char **argv)
 					case 4:
 
 						altaUsuario();
+						break;
+
+					case 5:
+
+						datosAdmin();
 						break;
 
 					default:
@@ -144,6 +150,7 @@ int menuAdmin(void)
 		printf("2. Lista de peliculas \n");
 		printf("3. Consultar ventas\n");
 		printf("4. Alta usuario\n");
+		printf("5. Datos admin\n");
 		printf("(q para salir)\n");
 		printf("\n");
 
@@ -153,7 +160,7 @@ int menuAdmin(void)
 		len = sscanf(str, "%d", &option); 
 		printf("\n");
 
-	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 4 || option < 1)));
+	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 5 || option < 1)));
 	
 	return (str[0] == 'q')?0:option;
 

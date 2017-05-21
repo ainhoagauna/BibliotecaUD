@@ -1,8 +1,8 @@
 #include "Persona.hpp"
 #include "string.h"
 
-
-Persona::Persona(const char* nombre, const char* apellido)
+using namespace std;
+Persona::Persona(const char *nombre, const char *apellido)
 	{
 		this->nombre = new char[strlen(nombre) + 1]; //this->name=name si fuera con string
 		strcpy(this->nombre, nombre);
@@ -31,11 +31,12 @@ virtual Persona::~Persona()
 
 	//virtual void PrintInfo();
 
-void Persona::getNombre() const
-	{
-		return nombre;
-	}
-void Persona::getApellido() const
-	{
-		return apellido;
-	}
+const char* Persona::getNombre()
+{
+	return nombre;
+}
+
+const char* Persona::getApellido()
+{
+	return apellido;
+}
