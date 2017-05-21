@@ -23,7 +23,7 @@ Persona::Persona(const Persona& p)
 
 	
 	}
-virtual Persona::~Persona()
+Persona::~Persona()
 	{
 		delete[] nombre;
 		delete[] apellido;

@@ -3,6 +3,7 @@
 #include "Persona.hpp"
 #include "gestion.hpp"
 
+using namespace std;
 
 void altaUsuario()
 {
@@ -15,7 +16,7 @@ void altaUsuario()
 	
 }
 
-/*
+
 void printSueldo(Admin &a)
 {
 	
@@ -29,7 +30,7 @@ void printPersonaRef(Persona &p)
 	cout << "Apellido: " << p.getApellido() << endl;
 	
 }
-*/
+
 
 void datosAdmin()
 {
@@ -38,10 +39,10 @@ void datosAdmin()
 	Admin *a = new Admin("Pepito", "Palotes", 1000);
 
 
-	//Persona *p2 = a; //aun siendo abstracta puedo seguir usandolo
+	Persona *p2 = a; //aun siendo abstracta puedo seguir usandolo
 
-	//printPersonaRef(*p2); //pasamos una referencia a una persona
-	//printSueldo(*a); // pasamos una referencia a un alumno
+	printPersonaRef(*p2); //pasamos una referencia a una persona
+	printSueldo(*a); // pasamos una referencia a un alumno
 
 
 	p2->escribirEnFichero("fichero.txt");

@@ -8,6 +8,8 @@
 
 void altaUsuario();
 
+void printSueldo(Admin &a);
+void printPersonaRef(Persona &p);
 void datosAdmin();
 
 #endif
