@@ -2,6 +2,8 @@
 #include "Admin.hpp"
 #include "Persona.hpp"
 #include "gestion.hpp"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -45,7 +47,18 @@ void datosAdmin()
 	printSueldo(*a); // pasamos una referencia a un alumno
 
 
-	p2->escribirEnFichero("fichero.txt");
+	//a->escribirEnFichero("Administrador.txt");
+
+	ofstream fs("Administrador.txt"); 
+
+  
+   fs << p2 << endl;
+  
+   fs.close();
 
 	//delete p2; // El destructor es polimorfico y se llama de forma correcta empezando por Alumno
+
+
+	
+
 }

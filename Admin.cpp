@@ -1,5 +1,6 @@
 #include "Admin.hpp"
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -16,5 +17,14 @@ int Admin::getSueldo()
 //aqiu si hay implementacion,por tanto no es abstracta
 void Admin::escribirEnFichero(const char* fichero)
 {
-	cout << "Escribiendo en " << fichero << endl;
+
+	ofstream fs("Administrador.txt"); 
+
+   // Enviamos una cadena al fichero de salida:
+   fs << "Hola Andrea" << endl;
+   // Cerrar el fichero, 
+   // para luego poder abrirlo para lectura:
+   fs.close();
+
+   
 }
