@@ -1,20 +1,19 @@
 #include "Usuario.hpp"
 #include <iostream>
 
-Usuario::Usuario()
-{
-	
-}
+
 Usuario::Usuario(const char* nombre, const char* apellido, int num_socio) : Persona(nombre, apellido)
 {
 	this->num_socio=num_socio;
 }
 	
 	
-void Usuario::getNum_socio(int num_socio)
+int Usuario::getNum_socio()
 {
 	return num_socio;
 }
+
+/*
 
 istream& operator>>(istream& in, Usuario& u) //istream->del teclado a la memoria(de ahi i)
 {
@@ -30,6 +29,8 @@ istream& operator>>(istream& in, Usuario& u) //istream->del teclado a la memoria
 
 ostream& operator<<(ostream& out, const Usuario& u)
 {
-	out << "(" << u.getNombre() << ", " << u.getApellido() << ", " << u.getNum_socio() << ")";//aqui tengo que hacer .get porque no es friend como arriba
+	cout << "(" << u.getNombre() << ", " << u.getApellido() << ", " << u.getNum_socio() << ")";//aqui tengo que hacer .get porque no es friend como arriba
 	return out;
 }
+
+*/

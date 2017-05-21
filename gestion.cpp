@@ -38,7 +38,7 @@ void datosAdmin()
 {
 	cout<< "Hola"<<endl;
 
-	Admin *a = new Admin("Pepito", "Palotes", 1000);
+	Admin a = new Admin("Pepito", "Palotes", 1000);
 
 
 	Persona *p2 = a; //aun siendo abstracta puedo seguir usandolo
@@ -47,12 +47,23 @@ void datosAdmin()
 	printSueldo(*a); // pasamos una referencia a un alumno
 
 
-	//a->escribirEnFichero("Administrador.txt");
+	ofstream fs;
+	fs.open("Administrador.txt", ios::app);//ios:app para que escriba al final 
 
-	ofstream fs("Administrador.txt"); 
+	// Enviamos una cadena al fichero de salida:
+   fs << "Hola Andrea" << endl;
+   // Cerrar el fichero, 
+   // para luego poder abrirlo para lectura:
+  
+
+
+	//escribirEnFichero(fs);
+	
+
+	//ofstream fs("Administrador.txt"); 
 
   
-   fs << p2 << endl;
+   fs << p2<< endl;
   
    fs.close();
 

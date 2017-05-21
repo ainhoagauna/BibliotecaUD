@@ -18,13 +18,15 @@ int Admin::getSueldo()
 void Admin::escribirEnFichero(const char* fichero)
 {
 
-	ofstream fs("Administrador.txt"); 
+
+	//ofstream fs 
+	//fs.open("Administrador.txt")
 
    // Enviamos una cadena al fichero de salida:
-   fs << "Hola Andrea" << endl;
+   //fichero << "Hola Andrea" << endl;
    // Cerrar el fichero, 
    // para luego poder abrirlo para lectura:
-   fs.close();
+   //fichero.close();
 
    
 }
