@@ -9,14 +9,14 @@ class Usuario : public Persona
 {
 	int num_socio;
 public:
-
+	Usuario();
 	Usuario(const char* nombre, const char* apellido, int num_socio);	
 
 	int getNum_socio();
 
-	friend istream& operator>>(istream& in, Usuario& u);
+	//friend istream& operator>>(istream& in, Usuario& u);
 };
 
-ostream& operator<<(ostream& out, const Usuario& u); //ostream es un atajo, para evitar el encapsulamiento ESTA FUERA DE LA CLASE
+//ostream& operator<<(ostream& out, const Usuario& u); //ostream es un atajo, para evitar el encapsulamiento ESTA FUERA DE LA CLASE
 
 #endif 

@@ -2,6 +2,10 @@
 #include "string.h"
 
 using namespace std;
+Persona::Persona()
+{
+	
+}
 Persona::Persona(const char *nombre, const char *apellido)
 	{
 		this->nombre = new char[strlen(nombre) + 1]; //this->name=name si fuera con string

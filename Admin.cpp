@@ -15,8 +15,8 @@ int Admin::getSueldo()
 }
 
 //aqiu si hay implementacion,por tanto no es abstracta
-void Admin::escribirEnFichero(const char* fichero)
-{
+//void Admin::escribirEnFichero(const char* fichero)
+//{
 
 
 	//ofstream fs 
@@ -29,4 +29,4 @@ void Admin::escribirEnFichero(const char* fichero)
    //fichero.close();
 
    
-}
+//}

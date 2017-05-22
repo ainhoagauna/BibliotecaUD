@@ -5,13 +5,20 @@
 #include "gestion.hpp"
 #include <iostream>
 #include <fstream>
-#include "string"
+#include "string.h"
 
 using namespace std;
 
 void altaUsuario()
 {
+	Usuario u1;
+
+	cin >> u1;
+
 	
+	
+
+	/*
 	cout<< "Introduzca los datos del usuario nuevo: "<<endl;
 	cout<< " "<<endl;
 	cout<< "Nombre: "<<endl;
@@ -27,6 +34,8 @@ void altaUsuario()
 	//cin>>num_socio;
 	
 	//Usuario *u=new Usuario(nombre,apellido, num_socio);
+
+	*/
 }
 
 
