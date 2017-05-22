@@ -16,7 +16,7 @@ int Usuario::getNum_socio()
 	return num_socio;
 }
 
-
+/*
 
 istream& operator>>(istream& in, Usuario& p) //istream->del teclado a la memoria(de ahi i)
 {
@@ -35,3 +35,4 @@ ostream& operator<<(ostream& out, const Point3D& p)
 	out << "(" << p.getNombre() << ", " << p.getApellido() << ", " << p.getSocio() << ")";//aqui tengo que hacer .get porque no es friend como arriba
 	return out;
 }
+*/

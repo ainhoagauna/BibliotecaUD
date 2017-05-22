@@ -12,7 +12,7 @@ public:
 	
 	int getSueldo();
 
-	virtual void escribirEnFichero(const char* fichero);
+	//virtual void escribirEnFichero(const char* fichero);
 };
 
 #endif

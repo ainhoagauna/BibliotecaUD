@@ -9,11 +9,27 @@
 
 using namespace std;
 
+void listaUsuario()
+{
+	string line;
+	ifstream myFile("Usuario.txt");
+
+	cout<<"Leyendo usuarios...."<<endl;
+	cout<<"________________________________________________________________________________"<< endl;
+
+	while(getline(myFile,line))
+	{
+
+		cout<< line <<endl;
+
+	
+	}	
+}
 void altaUsuario()
 {
-	Usuario u1;
+	//Usuario u1;
 
-	cin >> u1;
+	//cin >> u1;
 
 	
 	

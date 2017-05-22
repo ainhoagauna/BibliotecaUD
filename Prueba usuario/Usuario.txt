@@ -12,3 +12,7 @@ Nombre:Jokin
 Apellido: Zulaika
 Numero de socio: 45
 
+Nombre:ainhoa
+Apellido: gauna
+Numero de socio: 12
+

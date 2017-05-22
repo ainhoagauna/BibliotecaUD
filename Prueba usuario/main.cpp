@@ -1,5 +1,23 @@
 #include "Usuario.h"
 #include <fstream>
+
+void leerFichero()
+{
+   	string line;
+	ifstream myFile("Usuario.txt");
+
+	cout<<"________________________________________________________________________________"<< endl;
+
+	while(getline(myFile,line))
+	{
+
+		cout<< line <<endl;
+
+	
+	}	
+
+}
+
 int main()
 {
 	Usuario p1;
@@ -20,5 +38,8 @@ int main()
 
    	cout << "SE HA DADO DE ALTA CORRECTAMENTE!!" << endl;
 
-	return 0;
+
+   	leerFichero();
+
 }
+
