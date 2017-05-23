@@ -2,21 +2,28 @@
 #define _USUARIO_H
 #include <iostream>
 #include "Persona.hpp"
-
+#include <string.h>
 using namespace std;
 
 class Usuario : protected Persona
 {
+	string nombre;
+	string apellido;
 	int num_socio;
+	
 public:
-	Usuario();
-	Usuario(const char* nombre, const char* apellido, int num_socio);	
+	Usuario() {}
 
-	int getNum_socio();
+	Usuario(string nombre,  string apellido, int num_socio);
 
-	//friend istream& operator>>(istream& in, Usuario& u);
+
+	string getNombre() const { return nombre; }
+	string getApellido() const { return apellido; }
+	int getNum_socio() const { return num_socio; }
+
+	friend istream& operator>>(istream& in, Usuario& p); //sobrecarga --> >> para poder leer de la entrada,FRIEND-->todo lo que sea privado es publico para friend(evita el encapsulamiento)
 };
 
-//ostream& operator<<(ostream& out, const Usuario& u); //ostream es un atajo, para evitar el encapsulamiento ESTA FUERA DE LA CLASE
+ostream& operator<<(ostream& out, const Usuario& p); //ostream es un atajo, para evitar el encapsulamiento ESTA FUERA DE LA CLASE
 
-#endif 
+#endif
