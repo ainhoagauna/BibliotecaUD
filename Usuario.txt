@@ -18,3 +18,7 @@ Nombre:werty
 Apellido: qwerty
 Numero de socio: 234
 
+Nombre:Paula
+Apellido: Elosegui
+Numero de socio: 4
+

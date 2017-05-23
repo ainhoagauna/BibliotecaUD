@@ -26,6 +26,24 @@ void listaUsuario()
 	}	
 
 }
+void mostrarAdmin()
+{
+	string line;
+	ifstream myFile("Administrador.txt");
+
+	cout<<"Mostrando Administrador...."<<endl;
+	cout<<"____________________________"<< endl;
+
+	while(getline(myFile,line))
+	{
+
+		cout<< line <<endl;
+		cout<<" "<<endl;
+
+	
+	}	
+
+}
 void altaUsuario()
 {
 	Usuario p1;
@@ -68,38 +86,25 @@ void printPersonaRef(Persona &p)
 
 void datosAdmin()
 {
-	cout<< "Hola"<<endl;
+	string nombre="Pepito";
+	string apellido="Palotes";
+	int sueldo=1000;
 
-	Admin *a = new Admin("Pepito", "Palotes", 1000);
+	//Admin a=new Admin(nombre, apellido, sueldo);
+	fstream fs("Administrador.txt");
 
+	if(!fs.is_open())
+	{
+		fs.open("Administrador.txt", ios::app);//ios:app para que escriba al final 
+	}
 
-	Persona *p2 = a; //aun siendo abstracta puedo seguir usandolo
-
-	printPersonaRef(*p2); //pasamos una referencia a una persona
-	printSueldo(*a); // pasamos una referencia a un alumno
-
-
-	ofstream fs;
-	fs.open("Administrador.txt", ios::app);//ios:app para que escriba al final 
-
-	// Enviamos una cadena al fichero de salida:
-   fs << "Hola Andrea" << endl;
-   // Cerrar el fichero, 
-   // para luego poder abrirlo para lectura:
-  
-
-
-	//escribirEnFichero(fs);
-	
-
-	//ofstream fs("Administrador.txt"); 
-
-   fs << a << endl;
+   fs << nombre << endl;
+   fs << apellido <<endl;
+   fs << sueldo << endl;
   
    fs.close();
 
-	//delete p2; // El destructor es polimorfico y se llama de forma correcta empezando por Alumno
-
+   mostrarAdmin();
 
 	
 
