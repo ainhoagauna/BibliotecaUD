@@ -151,7 +151,7 @@ int menuAdmin(void)
 	do
 	{
 
-		printf("BIENVENIDO A VIDEOCLUB UD!!\n");
+		printf("BIENVENIDO A VIDEOCLUB UD!! (ADMIN)\n");
 		printf("Indique su opcion: \n");
 		printf("1. Anyadir pelicula\n");
 		printf("2. Lista de peliculas \n");
