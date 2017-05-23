@@ -10,9 +10,5 @@ Nombre:Andrea
 Apellido: Morillas
 Numero de socio: 3Nombre:Jon
 Apellido: Brown
-Numero de socio: 12
-
-Nombre:iep
-Apellido: iep
-Numero de socio: 3
+Numero de socio: 345
 

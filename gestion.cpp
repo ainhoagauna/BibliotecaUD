@@ -24,6 +24,7 @@ void listaUsuario()
 
 	
 	}	
+
 }
 void altaUsuario()
 {
@@ -46,6 +47,7 @@ void altaUsuario()
    	cout << "SE HA DADO DE ALTA CORRECTAMENTE!!" << endl;
 
    	listaUsuario();
+
 }
 
 
