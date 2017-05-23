@@ -24,6 +24,7 @@ void listaUsuario()
 
 	
 	}	
+
 }
 void altaUsuario()
 {
@@ -46,6 +47,7 @@ void altaUsuario()
    	cout << "SE HA DADO DE ALTA CORRECTAMENTE!!" << endl;
 
    	listaUsuario();
+
 }
 
 
@@ -66,8 +68,8 @@ void printPersonaRef(Persona &p)
 
 void datosAdmin()
 {
-	string nombre="Andrea";
-	string apellido="Morillas";
+	string nombre="Pepito";
+	string apellido="Palotes";
 	int sueldo=1000;
 
 	//Admin a=new Admin(nombre, apellido, sueldo);
@@ -77,8 +79,6 @@ void datosAdmin()
 	{
 		fs.open("Administrador.txt", ios::app);//ios:app para que escriba al final 
 	}
-
-   fs << "Hola Holaas" << endl;
 
    fs << nombre << endl;
    fs << apellido <<endl;
