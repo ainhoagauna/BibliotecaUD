@@ -27,31 +27,25 @@ void listaUsuario()
 }
 void altaUsuario()
 {
-	//Usuario u1;
+	Usuario p1;
+	cout << "Introduce los datos del nuevo usuario:" << endl;
+	cin >> p1;
 
-	//cin >> u1;
+	cout << "Este es el usuario guardado: " << endl;
 
-	
-	
 
-	/*
-	cout<< "Introduzca los datos del usuario nuevo: "<<endl;
-	cout<< " "<<endl;
-	cout<< "Nombre: "<<endl;
-	//string nombre;
-	//cin>> nombre;
-	//cout<< "Hola: "<< nombre <<endl;
+	cout << endl << p1 << endl;
 
-	cout<< "Apellido: "<<endl;
-	//string apellido;
-	//cin>> apellido;
-	cout<< "Numero de socio: "<<endl;
-	//string num_socio;
-	//cin>>num_socio;
-	
-	//Usuario *u=new Usuario(nombre,apellido, num_socio);
+	ofstream fs;
+	fs.open("Usuario.txt", ios::app);//ios:app para que escriba al final 
 
-	*/
+
+	fs << p1 << endl;  
+   	fs.close();
+
+   	cout << "SE HA DADO DE ALTA CORRECTAMENTE!!" << endl;
+
+   	listaUsuario();
 }
 
 
