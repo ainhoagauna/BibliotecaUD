@@ -3,7 +3,7 @@
 
 #include "Persona.hpp"
 
-class Admin : public Persona
+class Admin : protected Persona
 {
 
 	int sueldo;

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Usuario : public Persona
+class Usuario : protected Persona
 {
 	int num_socio;
 public:
