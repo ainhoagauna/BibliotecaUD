@@ -8,7 +8,13 @@ Numero de socio: 2
 
 Nombre:Andrea
 Apellido: Morillas
-Numero de socio: 3Nombre:Jon
-Apellido: Brown
-Numero de socio: 345
+Numero de socio: 3
+
+Nombre:wer
+Apellido: wer
+Numero de socio: 2
+
+Nombre:werty
+Apellido: qwerty
+Numero de socio: 234
 
