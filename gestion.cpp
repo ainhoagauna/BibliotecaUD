@@ -26,6 +26,24 @@ void listaUsuario()
 	}	
 
 }
+void mostrarAdmin()
+{
+	string line;
+	ifstream myFile("Administrador.txt");
+
+	cout<<"Mostrando Administrador...."<<endl;
+	cout<<"____________________________"<< endl;
+
+	while(getline(myFile,line))
+	{
+
+		cout<< line <<endl;
+		cout<<" "<<endl;
+
+	
+	}	
+
+}
 void altaUsuario()
 {
 	Usuario p1;
@@ -86,6 +104,7 @@ void datosAdmin()
   
    fs.close();
 
+   mostrarAdmin();
 
 	
 
