@@ -1,38 +1,35 @@
-#include "Usuario.hpp"
+#include "Usuario.h"
 #include <iostream>
+#include <string.h>
 
-Usuario::Usuario()
+Usuario::Usuario(string nombre,  string apellido, int num_socio) 
 {
 
-}
-Usuario::Usuario(const char* nombre, const char* apellido, int num_socio) : Persona(nombre, apellido)
-{
+	this->nombre = nombre;
+	this->apellido = apellido;
 	this->num_socio=num_socio;
-}
-	
-	
-int Usuario::getNum_socio()
-{
-	return num_socio;
-}
+};
 
-/*
+
 
 istream& operator>>(istream& in, Usuario& p) //istream->del teclado a la memoria(de ahi i)
 {
 	//no hay this, porque estoy fuera de la clase(no tengogo POint3D::)-->en.h tambien esta fuerda de la clase, aunque este dentro con friend esta fuera de la clase
 	cout << "Nombre: ";
-	cin >> p.x;
+	cin >> p.nombre;
 	cout << "Apellido: ";
-	cin >> p.y;
-	cout << "Numero de socio: ";
-	cin >> p.z;
+	cin >> p.apellido;
+	cout << "Numero socio: ";
+	cin >> p.num_socio;
+	cout << endl;
 	return in;
 }
 
-ostream& operator<<(ostream& out, const Point3D& p)
+ostream& operator<<(ostream& out, const Usuario& p)
 {
-	out << "(" << p.getNombre() << ", " << p.getApellido() << ", " << p.getSocio() << ")";//aqui tengo que hacer .get porque no es friend como arriba
+	out << "Nombre:" << p.getNombre() <<endl;
+	out << "Apellido: " << p.getApellido() <<endl;
+	out << "Numero de socio: " << p.getNum_socio() <<endl;
+	//out << "----------------------" << endl;
 	return out;
 }
-*/

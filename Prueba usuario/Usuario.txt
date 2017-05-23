@@ -1,18 +1,12 @@
-Nombre:ainhoa
-Apellido gauna
-Numero de socio: 12
-----------------------
-
-Nombre:Andrea
-Apellido Morillas
-Numero de socio: 4
-----------------------
-
 Nombre:Jokin
 Apellido: Zulaika
-Numero de socio: 45
+Numero de socio: 1
 
-Nombre:ainhoa
-Apellido: gauna
-Numero de socio: 12
+Nombre:Ainhoa
+Apellido: Gauna
+Numero de socio: 2
+
+Nombre:Andrea
+Apellido: Morillas
+Numero de socio: 3
 
