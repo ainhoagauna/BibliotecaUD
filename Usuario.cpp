@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string.h>
 
+
 Usuario::Usuario(string nombre,  string apellido, int num_socio) 
 {
 
@@ -12,9 +13,9 @@ Usuario::Usuario(string nombre,  string apellido, int num_socio)
 
 
 
-istream& operator>>(istream& in, Usuario& p) //istream->del teclado a la memoria(de ahi i)
+istream& operator>>(istream& in, Usuario& p) 
 {
-	//no hay this, porque estoy fuera de la clase(no tengogo POint3D::)-->en.h tambien esta fuerda de la clase, aunque este dentro con friend esta fuera de la clase
+
 	cout << "Nombre: ";
 	cin >> p.nombre;
 	cout << "Apellido: ";

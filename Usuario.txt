@@ -1,24 +1,48 @@
-Nombre:Jokin
-Apellido: Zulaika
-Numero de socio: 1
+Nombre:A
+Apellido: 2
+Numero de socio: 2
+
+Nombre:2
+Apellido: 2
+Numero de socio: 2
+
+Nombre:2
+Apellido: 2
+Numero de socio: 2
+
+Nombre:2Q
+Apellido: Q
+Numero de socio: 0
 
 Nombre:Ainhoa
 Apellido: Gauna
 Numero de socio: 2
 
-Nombre:Andrea
-Apellido: Morillas
-Numero de socio: 3
+Nombre:5
+Apellido: q
+Numero de socio: 0
 
-Nombre:wer
-Apellido: wer
-Numero de socio: 2
+Nombre:Ainhoa
+Apellido: Gauna
+Numero de socio: 34
 
-Nombre:werty
-Apellido: qwerty
-Numero de socio: 234
+Nombre:qeqew
+Apellido: qeqwe
+Numero de socio: 11
 
-Nombre:Paula
-Apellido: Elosegui
-Numero de socio: 4
+Nombre:q
+Apellido: q
+Numero de socio: 0
+
+Nombre:asdas
+Apellido: asdasd
+Numero de socio: 23
+
+Nombre:sadasd
+Apellido: asdasd
+Numero de socio: 213
+
+Nombre:fsds
+Apellido: dsdf
+Numero de socio: 42
 

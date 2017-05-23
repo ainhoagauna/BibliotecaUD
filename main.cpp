@@ -63,8 +63,9 @@ int main(int argc, char **argv)
 					case 4:
 						
 						altaUsuario();
-						option = 0;
+						//option = 0;
 						break;
+
 
 					case 5:
 
