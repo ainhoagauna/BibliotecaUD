@@ -69,7 +69,7 @@ int eliminarBuscar(char* palabra)
         {
         	printf("Vuelva a intentarlo \n");
 	      	gets(palabra);
-	      	eliminarPelicula(palabra);
+	      	//eliminarPelicula(palabra);
         }
      
 

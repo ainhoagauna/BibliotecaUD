@@ -17,7 +17,7 @@ void eliminarPelicula()
 	char str[MAX_LENGHT];
 	char frm_str[MAX_LENGHT];
 
-	printf("Introduzca el titulo de la pelicula que desea eliminar: \n");
+	cout<<"Introduzca el nombre de la pelicula que quiere eliminar:"<<endl;
 	fgets(str,MAX_LENGHT,stdin);
 	eliminarBuscar(str);
 

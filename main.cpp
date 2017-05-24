@@ -175,7 +175,7 @@ int menuAdmin(void)
 		len = sscanf(str, "%d", &option); 
 		printf("\n");
 
-	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 6 || option < 1)));
+	}while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 7 || option < 1)));
 	
 	return (str[0] == 'q')?0:option;
 
