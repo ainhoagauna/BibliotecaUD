@@ -2,6 +2,7 @@
 #include "Admin.hpp"
 #include "Usuario.hpp"
 #include "Persona.hpp"
+#include "peliculas.hpp"
 #include "gestion.hpp"
 #include "gestion.hpp"
 #include "gestion.h"
@@ -11,6 +12,8 @@
 
 #define MAX_LENGHT 50
 using namespace std;
+
+
 
 void eliminarPelicula()
 {
