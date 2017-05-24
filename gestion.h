@@ -15,6 +15,7 @@ typedef struct
 
 }Pelicula;
 
+int eliminarBuscar(char *str);
 void ventas();
 
 void anyadirPelicula();

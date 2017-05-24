@@ -46,3 +46,11 @@ Nombre:fsds
 Apellido: dsdf
 Numero de socio: 42
 
+Nombre:Ainhoa
+Apellido: Gauna
+Numero de socio: 45
+
+Nombre:q
+Apellido: q
+Numero de socio: 0
+

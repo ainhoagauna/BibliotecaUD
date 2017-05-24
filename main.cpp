@@ -77,6 +77,11 @@ int main(int argc, char **argv)
 						mostrarAdmin();
 						break;
 
+					case 7: 
+
+						eliminarPelicula();
+						break;
+
 					default:
 						return -1;
 						break;
@@ -160,6 +165,7 @@ int menuAdmin(void)
 		printf("4. Alta usuario\n");
 		printf("5. Lista de los usuarios\n");
 		printf("6. Datos admin\n");
+		printf("7. Eliminar pelicula\n");
 		printf("(q para salir)\n");
 		printf("\n");
 

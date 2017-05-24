@@ -8,5 +8,6 @@
 void listaUsuario();
 void altaUsuario();
 void mostrarAdmin();
+void eliminarPelicula();
 
 #endif

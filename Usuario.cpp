@@ -1,6 +1,7 @@
 #include "Usuario.hpp"
 #include <iostream>
 #include <string.h>
+#include <ctype.h> 
 
 
 Usuario::Usuario(string nombre,  string apellido, int num_socio) 

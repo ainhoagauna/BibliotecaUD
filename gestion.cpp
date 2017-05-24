@@ -3,19 +3,32 @@
 #include "Usuario.hpp"
 #include "Persona.hpp"
 #include "gestion.hpp"
+#include "gestion.hpp"
+#include "gestion.h"
 #include <iostream>
 #include <fstream>
 #include "string.h"
 
+#define MAX_LENGHT 50
 using namespace std;
 
+void eliminarPelicula()
+{
+	char str[MAX_LENGHT];
+	char frm_str[MAX_LENGHT];
+
+	printf("Introduzca el titulo de la pelicula que desea eliminar: \n");
+	fgets(str,MAX_LENGHT,stdin);
+	eliminarBuscar(str);
+
+}
 void listaUsuario()
 {
 	string line;
 	ifstream myFile("Usuario.txt");
 
 	cout<<"Leyendo usuarios...."<<endl;
-	cout<<"________________________________________________________________________________"<< endl;
+	cout<<"________________________________________________________"<< endl;
 
 	while(getline(myFile,line))
 	{
