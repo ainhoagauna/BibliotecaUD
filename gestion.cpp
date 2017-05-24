@@ -86,30 +86,3 @@ void printPersonaRef(Persona &p)
 	cout << "Apellido: " << p.getApellido() << endl;
 	
 }
-
-
-void datosAdmin()
-{
-	string nombre="Pepito";
-	string apellido="Palotes";
-	int sueldo=1000;
-
-	//Admin a=new Admin(nombre, apellido, sueldo);
-	fstream fs("Administrador.txt");
-
-	if(!fs.is_open())
-	{
-		fs.open("Administrador.txt", ios::app);//ios:app para que escriba al final 
-	}
-
-   fs << nombre << endl;
-   fs << apellido <<endl;
-   fs << sueldo << endl;
-  
-   fs.close();
-
-   mostrarAdmin();
-
-	
-
-}

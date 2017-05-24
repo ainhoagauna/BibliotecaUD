@@ -7,6 +7,6 @@
 
 void listaUsuario();
 void altaUsuario();
-void datosAdmin();
+void mostrarAdmin();
 
 #endif

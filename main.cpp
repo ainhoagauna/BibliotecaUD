@@ -74,7 +74,7 @@ int main(int argc, char **argv)
 
 					case 6:
 
-						datosAdmin();
+						mostrarAdmin();
 						break;
 
 					default:

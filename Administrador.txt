@@ -1,3 +1,2 @@
-Pepito
-Palotes
-1000
+1er argumento: admin
+2o argumento: admin
