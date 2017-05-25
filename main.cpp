@@ -52,22 +52,22 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
           string s;
           while ( getline( iss, s, ' ' ) ) 
           {
-          	cout<<"Entrooo 1"<<endl;
+          	//cout<<"Entrooo 1"<<endl;
               atributos.push_back(s);
           }
           if(atributos.size()<3)
           {
-          	cout<<"Entrooo 2"<<endl;
+          //	cout<<"Entrooo 2"<<endl;
 
           nombre= atributos[0].c_str();
-          apellido=atributos[1].c_str();
-          num_socio = 0;
+          apellido=atributos[0].c_str();
+          //num_socio = 0;
           
           Usuario u (nombre, apellido, num_socio);
           cout<<'\t'<< '\t'<< u;
           vectorUsuarios.push_back(u);
 
-          cout<<"Entrooo 3"<<endl;
+          //cout<<"Entrooo 3"<<endl;
           }
           else 
           {
@@ -89,6 +89,7 @@ int eliminarUsuario()
 	
 	bool correcto=false;
 	string nombre;
+	string apellido;
 	int num_socio;
 	vector<Usuario>vectorUsuarios;
 	LeerFichero(vectorUsuarios);
@@ -101,12 +102,13 @@ int eliminarUsuario()
 	{
 		cout<<"HOLAA"<<endl;
 		string nombreU=vectorUsuarios[i].getNombre();
+		string apellidoU=vectorUsuarios[i].getApellido();
 		int num_socioU=vectorUsuarios[i].getNum_socio();
-		if(nombreU==nombre && num_socioU==num_socio)
+		if(nombreU==nombre)
 		{
 			correcto=true;
 
-			cout<<"Eliminando pelicula..."<<nombre<<endl;
+			cout<<"Eliminando usuario..."<<nombre<<endl;
 
 			vectorUsuarios.erase(vectorUsuarios.begin()+i);
 
@@ -122,10 +124,10 @@ int eliminarUsuario()
 
 		if(correcto==false)
 		{
-			cout<<"La pelicula introducida no se encuentra en el sistema"<<endl;
+			cout<<"El usuarui introducido no se encuentra en el sistema"<<endl;
 		}
 	}
-return 0;
+
 }
 
 int main(int argc, char **argv, char **vectorUsuarios)

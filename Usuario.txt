@@ -1,56 +1,6 @@
-Nombre:A
-Apellido: 2
-Numero de socio: 2
-
-Nombre:2
-Apellido: 2
-Numero de socio: 2
-
-Nombre:2
-Apellido: 2
-Numero de socio: 2
-
-Nombre:2Q
-Apellido: Q
-Numero de socio: 0
-
-Nombre:Ainhoa
-Apellido: Gauna
-Numero de socio: 2
-
-Nombre:5
-Apellido: q
-Numero de socio: 0
-
-Nombre:Ainhoa
-Apellido: Gauna
-Numero de socio: 34
-
-Nombre:qeqew
-Apellido: qeqwe
-Numero de socio: 11
-
-Nombre:q
-Apellido: q
-Numero de socio: 0
-
-Nombre:asdas
-Apellido: asdasd
-Numero de socio: 23
-
-Nombre:sadasd
-Apellido: asdasd
-Numero de socio: 213
-
-Nombre:fsds
-Apellido: dsdf
-Numero de socio: 42
-
-Nombre:Ainhoa
-Apellido: Gauna
-Numero de socio: 45
-
-Nombre:q
-Apellido: q
-Numero de socio: 0
-
+Ainhoa
+Gauna
+2
+Leire
+Gauna
+23

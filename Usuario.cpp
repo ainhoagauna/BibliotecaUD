@@ -29,9 +29,9 @@ istream& operator>>(istream& in, Usuario& p)
 
 ostream& operator<<(ostream& out, const Usuario& p)
 {
-	out << "Nombre:" << p.getNombre() <<endl;
-	out << "Apellido: " << p.getApellido() <<endl;
-	out << "Numero de socio: " << p.getNum_socio() <<endl;
+	out << p.getNombre() <<endl;
+	out  << p.getApellido() <<endl;
+	out  << p.getNum_socio() <<endl;
 	//out << "----------------------" << endl;
 	return out;
 }
