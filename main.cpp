@@ -23,19 +23,20 @@ void clear_if_needed(char *str);
 #define USU_PASSWORD "usuario"
 #define MAX_PELICULAS 	5
 
-void eliminarUsuario(vector<Usuario>& vectorUsuarios)
+void eliminarUsuario()
 {
 	bool correcto=false;
 	string nombre;
 	int num_socio;
-
+	vector<Usuario>vectorUsuarios;
 
 	cout<<"Introduzca el nombre del usuario que desea eliminar"<<endl;
 	cin>>nombre;
 
-
+	cout<<"Llego"<<endl;
 	for(int i=0; i<vectorUsuarios.size();i++)
 	{
+		cout<<"HOLAA"<<endl;
 		string nombreU=vectorUsuarios[i].getNombre();
 		int num_socioU=vectorUsuarios[i].getNum_socio();
 		if(nombreU==nombre && num_socioU==num_socio)
@@ -62,7 +63,7 @@ void eliminarUsuario(vector<Usuario>& vectorUsuarios)
 		}
 	}
 
-	return 0;
+}
 
 int main(int argc, char **argv, char **vectorUsuarios)
 {
@@ -122,7 +123,7 @@ int main(int argc, char **argv, char **vectorUsuarios)
 
 					case 7: 
 
-						eliminarUsuario(vector<Usuario>& vectorUsuarios);
+						eliminarUsuario();
 						break;
 
 					default:
@@ -208,7 +209,7 @@ int menuAdmin(void)
 		printf("4. Alta usuario\n");
 		printf("5. Lista de los usuarios\n");
 		printf("6. Datos admin\n");
-		printf("7. Eliminar pelicula\n");
+		printf("7. Eliminar usuario\n");
 		printf("(q para salir)\n");
 		printf("\n");
 
