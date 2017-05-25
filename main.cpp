@@ -10,6 +10,8 @@
 #include <iostream>
 #include <vector>
 #include "string"
+#include <fstream>
+#include <sstream>
 
 
 using namespace std;
@@ -23,7 +25,56 @@ void clear_if_needed(char *str);
 #define USU_PASSWORD "usuario"
 #define MAX_PELICULAS 	5
 
-void eliminarUsuario()
+void LeerFichero(vector<Usuario> & vectorUsuario)
+{
+  cout << endl <<"Leyendo datps del fichero..."<< endl<< endl;
+  vectorUsuario.clear();
+  vector<string> atributos;
+
+  string nombre;
+  string apellido;
+  int num_socio;
+  
+  string line;
+  string usuario;
+  ifstream ifs("Usuario.txt");
+
+  int i=0;
+  while(getline(ifs, line))
+  {
+    
+    usuario += line;
+
+          istringstream iss(usuario);
+          string s;
+          while ( getline( iss, s, ' ' ) ) 
+          {
+              atributos.push_back(s);
+          }
+          if(atributos.size()<3)
+          {
+
+          nombre= atributos[0].c_str();
+          apellido=atributos[1].c_str();
+          num_socio = atributos[2].c_str();
+          
+          Usuario u (nombre, apellido, num_socio);
+          cout<<'\t'<< '\t'<< u;
+          vectorUsuario.push_back(u);
+          }
+          else 
+          {
+            cout<< "NO COINCIDEN LOS DATOS"<< endl;
+          }
+
+          atributos.clear();
+                    
+    //cout<< "Usuario "<< i << ": "<<usuario<< endl;
+    usuario ="";
+    i++;
+  }
+}
+int eliminarUsuario()
 {
 	bool correcto=false;
 	string nombre;
@@ -62,13 +113,15 @@ void eliminarUsuario()
 			cout<<"La pelicula introducida no se encuentra en el sistema"<<endl;
 		}
 	}
-
+return 0;
 }
 
 int main(int argc, char **argv, char **vectorUsuarios)
 {
 	int option;
 	int total = 0;
+	vector <Usuario> VectUsuarios;
+  	LeerFichero(VectUsuarios);
 
 	Pelicula peliculas[MAX_PELICULAS];
 		
