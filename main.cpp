@@ -25,10 +25,10 @@ void clear_if_needed(char *str);
 #define USU_PASSWORD "usuario"
 #define MAX_PELICULAS 	5
 
-void LeerFichero(vector<Usuario> & vectorUsuario)
+void LeerFichero(vector<Usuario> & vectorUsuarios)
 {
-  cout << endl <<"Leyendo datps del fichero..."<< endl<< endl;
-  vectorUsuario.clear();
+  cout <<"Leyendo datos del fichero..."<< endl;
+  vectorUsuarios.clear();
   vector<string> atributos;
 
   string nombre;
@@ -39,28 +39,35 @@ void LeerFichero(vector<Usuario> & vectorUsuario)
   string usuario;
   ifstream ifs("Usuario.txt");
 
+
+
+
   int i=0;
   while(getline(ifs, line))
   {
-    
+    cout<<"Estro"<<endl;
     usuario += line;
 
           istringstream iss(usuario);
           string s;
           while ( getline( iss, s, ' ' ) ) 
           {
+          	cout<<"Entrooo 1"<<endl;
               atributos.push_back(s);
           }
           if(atributos.size()<3)
           {
+          	cout<<"Entrooo 2"<<endl;
 
           nombre= atributos[0].c_str();
           apellido=atributos[1].c_str();
-          num_socio = atributos[2].c_str();
+          num_socio = 0;
           
           Usuario u (nombre, apellido, num_socio);
           cout<<'\t'<< '\t'<< u;
-          vectorUsuario.push_back(u);
+          vectorUsuarios.push_back(u);
+
+          cout<<"Entrooo 3"<<endl;
           }
           else 
           {
@@ -72,14 +79,19 @@ void LeerFichero(vector<Usuario> & vectorUsuario)
     //cout<< "Usuario "<< i << ": "<<usuario<< endl;
     usuario ="";
     i++;
+
+    cout<<"Llegooo"<<endl;
   }
 }
 int eliminarUsuario()
 {
+	
+	
 	bool correcto=false;
 	string nombre;
 	int num_socio;
 	vector<Usuario>vectorUsuarios;
+	LeerFichero(vectorUsuarios);
 
 	cout<<"Introduzca el nombre del usuario que desea eliminar"<<endl;
 	cin>>nombre;
@@ -121,7 +133,7 @@ int main(int argc, char **argv, char **vectorUsuarios)
 	int option;
 	int total = 0;
 	vector <Usuario> VectUsuarios;
-  	LeerFichero(VectUsuarios);
+  	
 
 	Pelicula peliculas[MAX_PELICULAS];
 		
