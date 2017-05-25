@@ -17,14 +17,23 @@ using namespace std;
 
 void eliminarPelicula()
 {
+
+	peliculas p1(string titulo, string genero, double precio, string valoracion);
+
+	string fic="peliculas.txt";
+
+	EliminarPelicula(fic);
+	/*
 	char str[MAX_LENGHT];
 	char frm_str[MAX_LENGHT];
 
 	cout<<"Introduzca el nombre de la pelicula que quiere eliminar:"<<endl;
 	fgets(str,MAX_LENGHT,stdin);
-	eliminarBuscar(str);
+	EliminarPelicula(str);
+	*/
 
 }
+
 void listaUsuario()
 {
 	string line;

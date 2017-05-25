@@ -14,16 +14,20 @@ private:
 	string genero;
 	double precio;
 	string valoracion;
+	string fic;
 
 public:
+	peliculas(){}
+
 	peliculas(string titulo, string genero, double precio, string valoracion);
-	~peliculas();
+
 	
 	void setTitulo(string titulo);
 	void setGenero(string genero);
 	void setPrecio(double precio);
 	void setValoracion(string valoracion);
 	void setPelicula(string titulo, string genero, double precio, string valoracion);
+	//void EliminarPelicula(string fic);
 
 	string getTitulo() const;
 	string getGenero() const;

@@ -3,8 +3,10 @@
 #include <string.h>
 #include <fstream>
 #include <stdlib.h>
+#include <vector>
 
 using namespace std;
+
 
 
 
@@ -45,7 +47,7 @@ using namespace std;
 
 	//metodos get de las variables
 
-	string peliculas::getTitulo(string titulo)
+	string peliculas::getTitulo() const
 	{
 		return this->titulo;
 	}
@@ -63,11 +65,11 @@ using namespace std;
 		return this->valoracion;
 	}
 
-vector<Pelicula> Pelicula::leerDeFichero(string fic)
+vector<peliculas>peliculas::leerDeFichero(string fic)
 {
 	int numPelicula = 1;
 	ifstream ifs(fic.c_str());
-	vector<Pelicula> vectorPeliculas;
+	vector<peliculas>vectorPeliculas;
 	string dato;
 	string nada ="                ";
 	double precio;
@@ -79,6 +81,7 @@ vector<Pelicula> Pelicula::leerDeFichero(string fic)
 	
 	while(!ifs.eof())
 	{
+
 		
 		getline(ifs, dato);
 		 if(dato != nada ) //Para asegurar que las rayas no se guardan como atributo del trabajador
@@ -104,14 +107,99 @@ vector<Pelicula> Pelicula::leerDeFichero(string fic)
 		 }else
 		 {
 		 	cout<< "Hemos entrado "<<endl;
-		 	Pelicula t1(titulo, genero, precio, valoracion);
+		 	//Pelicula t1(titulo, genero, precio, valoracion);
 		 //	printPelicula(t1);
 		 	vectorPeliculas.push_back(t1);
-		 	cout<< "Elementos " << vectorPeliculas.size() <<endl;
+		 	cout<< "Elementos " <<vectorPeliculas.size() <<endl;
+
+			 {cout<<"\n a["<<numPelicula<<"]="<<a[i];
+
+			 }
 		 	
 		 }
 	}
 
 	ifs.close();
 	return vectorPeliculas;
+}
+void peliculas::EliminarPelicula(string fic)
+{
+	string titulo;
+	string genero;
+	double precio;
+	string valoracion;
+
+	bool comprobacion=false;
+	int posicion;
+	vector<peliculas>vectorPeliculas;
+
+	cout<<"Lista de las peliculas:"<<endl;
+	//Pelicula t1(titulo, genero, precio, valoracion);
+
+	vector<peliculas>vectorPeliculas=t1.leerDeFichero(fic);
+
+	for (int i = 0; i < vectorPeliculas.size; ++i)
+	{
+		peliculas t =vectorPeliculas[i];
+		cout<<"Pelicula"<<i+1<<endl;
+		cout<<"\t"<<t.getTitulo<<endl;
+		cout<<"\t"<<t.getGenero<<endl;
+		cout<<"\t"<<t.getPrecio<<endl;
+		cout<<"\t"<<t.getValoracion<<endl;
+	}
+
+	do
+	{
+		cout<<"Introduzca el titulo de la pelicula que desea eliminar"<<endl;
+		cin>>titulo;
+
+		for (int i = 0; i <vectorPeliculas.size(); ++i)
+		{
+			peliculas t=vectorPeliculas[i];
+			if(titulo==t.getTitulo())
+			{
+				comprobacion=true;
+				cout<<"Existe!!"<<endl;
+				posicion=i;
+				break;
+			}
+			else
+			{
+				comprobacion=false;
+			}
+		}
+		if(comprobacion==false)
+		{
+			cout<<"No existe ninguna pelicula registrada con ese titulo"<<endl;
+		}
+	}
+	while(comprobacion !=true);
+
+	vectorPeliculas.erase(vectorPeliculas.begin()+posicion);
+	cout<<"NUEVO!!"<<endl;
+
+	for (int i = 0; i < vectorPeliculas.size(); ++i)
+	{
+		peliculas t=vectorPeliculas[i];
+		cout<<"Pelicula"<<i+1<<endl;
+		cout<<"\t"<<t.getTitulo<<endl;
+		cout<<"\t"<<t.getGenero<<endl;
+		cout<<"\t"<<t.getPrecio<<endl;
+		cout<<"\t"<<t.getValoracion<<endl;
+	}
+
+	if(remove("peliculas.txt") ! =0)
+	{
+		cout<<"No se ha podido eliminar el fichero"<<endl;
+	}
+	else
+	{
+		cout<<"El fichero se ha eliminado correctamente"<<endl;
+	}
+
+	for (int i = 0; i < vectorPeliculas.size(); ++i)
+	{
+		peliculas t=vectorPeliculas[i];
+		cout<<"no se que mas"<<endl;
+	}
 }
