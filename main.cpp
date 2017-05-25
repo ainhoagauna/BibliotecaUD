@@ -5,8 +5,10 @@
 #include "gestion.hpp"
 #include "Persona.hpp"
 #include "Usuario.hpp"
+#include "peliculas.cpp"
 #include "Admin.hpp"
 #include <iostream>
+#include <vector>
 #include "string"
 
 
@@ -21,7 +23,48 @@ void clear_if_needed(char *str);
 #define USU_PASSWORD "usuario"
 #define MAX_PELICULAS 	5
 
-int main(int argc, char **argv)
+void eliminarUsuario(vector<Usuario>& vectorUsuarios)
+{
+	bool correcto=false;
+	string nombre;
+	int num_socio;
+
+
+	cout<<"Introduzca el nombre del usuario que desea eliminar"<<endl;
+	cin>>nombre;
+
+
+	for(int i=0; i<vectorUsuarios.size();i++)
+	{
+		string nombreU=vectorUsuarios[i].getNombre();
+		int num_socioU=vectorUsuarios[i].getNum_socio();
+		if(nombreU==nombre && num_socioU==num_socio)
+		{
+			correcto=true;
+
+			cout<<"Eliminando pelicula..."<<nombre<<endl;
+
+			vectorUsuarios.erase(vectorUsuarios.begin()+i);
+
+			cout<<"GUARDO!!"<<endl;
+
+			break;
+
+		}
+		else
+		{
+			correcto=false;
+		}
+
+		if(correcto==false)
+		{
+			cout<<"La pelicula introducida no se encuentra en el sistema"<<endl;
+		}
+	}
+
+	return 0;
+
+int main(int argc, char **argv, char **vectorUsuarios)
 {
 	int option;
 	int total = 0;
@@ -79,7 +122,7 @@ int main(int argc, char **argv)
 
 					case 7: 
 
-						eliminarPelicula();
+						eliminarUsuario(vector<Usuario>& vectorUsuarios);
 						break;
 
 					default:
@@ -228,7 +271,6 @@ void liberarMemoria(Pelicula *a, int total)
 	for (i = 0; i < total; i++)
 		free(a[i].nombre);
 }
-
 
 
 

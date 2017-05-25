@@ -5,7 +5,7 @@
 #include <string.h>
 using namespace std;
 
-class Usuario : protected Persona
+class Usuario 
 {
 	string nombre;
 	string apellido;
@@ -22,6 +22,9 @@ public:
 	int getNum_socio() const { return num_socio; }
 
 	friend istream& operator>>(istream& in, Usuario& p); //sobrecarga --> >> para poder leer de la entrada,FRIEND-->todo lo que sea privado es publico para friend(evita el encapsulamiento)
+
+
+
 };
 
 ostream& operator<<(ostream& out, const Usuario& p); //ostream es un atajo, para evitar el encapsulamiento ESTA FUERA DE LA CLASE

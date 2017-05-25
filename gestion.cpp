@@ -15,10 +15,10 @@ using namespace std;
 
 
 
-void eliminarPelicula()
+/*void eliminarPelicula()
 {
 
-	peliculas p1(string titulo, string genero, double precio, string valoracion);
+	//peliculas p1(string titulo, string genero, double precio, string valoracion);
 
 	string fic="peliculas.txt";
 
@@ -31,8 +31,6 @@ void eliminarPelicula()
 	fgets(str,MAX_LENGHT,stdin);
 	EliminarPelicula(str);
 	*/
-
-}
 
 void listaUsuario()
 {

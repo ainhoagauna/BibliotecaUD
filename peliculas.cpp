@@ -3,7 +3,7 @@
 #include <string.h>
 #include <fstream>
 #include <stdlib.h>
-#include <vector>
+
 
 using namespace std;
 
@@ -65,6 +65,7 @@ using namespace std;
 		return this->valoracion;
 	}
 
+/*
 vector<peliculas>peliculas::leerDeFichero(string fic)
 {
 	int numPelicula = 1;
@@ -121,9 +122,10 @@ vector<peliculas>peliculas::leerDeFichero(string fic)
 
 	ifs.close();
 	return vectorPeliculas;
-}
-void peliculas::EliminarPelicula(string fic)
+} /*
+void peliculas::EliminarPelicula()
 {
+	/*
 	string titulo;
 	string genero;
 	double precio;
@@ -202,4 +204,6 @@ void peliculas::EliminarPelicula(string fic)
 		peliculas t=vectorPeliculas[i];
 		cout<<"no se que mas"<<endl;
 	}
-}
+	*/
+
+	
