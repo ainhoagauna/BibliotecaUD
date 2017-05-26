@@ -7,7 +7,7 @@
 
 void listaUsuario();
 void altaUsuario();
-void mostrarAdmin();
+void datosAdmin();
 void eliminarPelicula();
 
 #endif

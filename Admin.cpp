@@ -1,13 +1,15 @@
 #include "Admin.hpp"
 #include <iostream>
-#include <stdlib.h>
+#include <fstream>
 
-Admin::Admin(string nombre,  string apellido, int sueldo) 
+using namespace std;
+
+Admin::Admin(const char* nombre, const char* apellido, int sueldo): Persona(nombre,apellido)
 {
-
-	this->nombre = nombre;
-	this->apellido = apellido;
 	this->sueldo=sueldo;
+}
 
-
-};
+int Admin::getSueldo()
+{
+	return this->sueldo;
+}

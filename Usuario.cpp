@@ -29,7 +29,7 @@ istream& operator>>(istream& in, Usuario& p)
 
 ostream& operator<<(ostream& out, const Usuario& p)
 {
-	out << p.getNombre() << " "<<p.getApellido() << " " << p.getNum_socio() <<endl;
+	out << p.getNombre() << " "<<p.getApellido() << " " << p.getNum_socio();
 	//out << "----------------------" << endl;
 	return out;
 }

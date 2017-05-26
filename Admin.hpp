@@ -1,26 +1,18 @@
-#ifndef _ADMIN_H
-#define _ADMIN_H
-#include <iostream>
-#include <string.h>
+#ifndef _ADMIN_HPP
+#define _ADMIN_HPP
+
 #include "Persona.hpp"
-using namespace std;
 
-class Admin :protected Persona
+class Admin : public Persona
 {
-	string nombre;
-	string apellido;
+
 	int sueldo;
-	
 public:
-	Admin() {}
+	Admin(const char* nombre, const char* apellido, int sueldo);
+	
+	int getSueldo();
 
-	Admin(string nombre,  string apellido, int sueldo);
-
-
-	string getNombre() const { return nombre; }
-	string getApellido() const { return apellido; }
-	int getSueldo() const { return sueldo; }
-
-
+	//virtual void escribirEnFichero(const char* fichero);
 };
+
 #endif

@@ -137,6 +137,7 @@ int eliminarUsuario()
 		if(correcto==false)
 		{
 			cout<<"El usuario introducido no se encuentra en el sistema"<<endl;
+			eliminarUsuario();
 		}
 	}
 
@@ -197,7 +198,7 @@ int main(int argc, char **argv, char **vectorUsuarios)
 
 					case 6:
 
-						mostrarAdmin();
+						datosAdmin();
 						break;
 
 					case 7: 
