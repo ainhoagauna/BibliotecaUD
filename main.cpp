@@ -40,13 +40,11 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
   ifstream ifs("Usuario.txt");
 
 
-
-
   int i=0;
   while(getline(ifs, line))
   {
   	//  cout<<"Estro"<<endl;
-    usuario += line;
+    usuario+= line;
 
           istringstream iss(usuario);
           string s;
@@ -60,8 +58,8 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
       
 
          	 nombre= atributos[0].c_str();
-         	 apellido=atributos[0].c_str();
-          	 num_socio = atoi(atributos[0].c_str());
+         	 apellido=atributos[0+1].c_str();
+          	 num_socio = atoi(atributos[0+3].c_str());
          	
 
           
@@ -80,10 +78,12 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
                     
     //cout<< "Usuario "<< i << ": "<<usuario<< endl;
     usuario ="";
-   //i++;
+   	i++;
 
   
   }
+
+  ifs.close();
 }
 void GuardarEnFichero(vector<Usuario> & vectorUsuarios)
 {
@@ -96,9 +96,7 @@ void GuardarEnFichero(vector<Usuario> & vectorUsuarios)
   ofs.close();
 }
 int eliminarUsuario()
-{
-	
-	
+{	
 	bool correcto=false;
 	string nombre;
 	string apellido;
@@ -109,10 +107,10 @@ int eliminarUsuario()
 	cout<<"Introduzca el nombre del usuario que desea eliminar"<<endl;
 	cin>>nombre;
 
-	cout<<"Llego"<<endl;
+	
 	for(int i=0; i<vectorUsuarios.size();i++)
 	{
-		cout<<"HOLAA"<<endl;
+		
 		string nombreU=vectorUsuarios[i].getNombre();
 		string apellidoU=vectorUsuarios[i].getApellido();
 		int num_socioU=vectorUsuarios[i].getNum_socio();
@@ -121,17 +119,16 @@ int eliminarUsuario()
 		{
 			correcto=true;
 
-			cout<<"Eliminando usuario..."<<nombre<<endl;
+			cout<<"Eliminando usuario..."<<endl<<nombre<<endl;
 
 			vectorUsuarios.erase(vectorUsuarios.begin()+i);
-			vectorUsuarios.erase(vectorUsuarios.begin()+i+1);
-			vectorUsuarios.erase(vectorUsuarios.begin()+i+2);
 
 			GuardarEnFichero(vectorUsuarios);
 			cout<<"ELIMINADO!!"<<endl; //Hay que llamar al metodo para que guarde
-			break;
+			
 
 		}
+		
 		else
 		{
 			correcto=false;
