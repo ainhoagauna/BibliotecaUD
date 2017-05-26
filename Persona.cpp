@@ -8,10 +8,10 @@ Persona::Persona()
 }
 Persona::Persona(const char *nombre, const char *apellido)
 	{
-		this->nombre = new char[strlen(nombre) + 1]; //this->name=name si fuera con string
+		this->nombre = new char[strlen(nombre) + 1]; 
 		strcpy(this->nombre, nombre);
 
-		this->apellido = new char[strlen(apellido) + 1]; //this->name=name si fuera con string
+		this->apellido = new char[strlen(apellido) + 1];
 		strcpy(this->apellido, apellido);
 
 	}
@@ -32,8 +32,6 @@ Persona::~Persona()
 		delete[] nombre;
 		delete[] apellido;
 	}
-
-	//virtual void PrintInfo();
 
 const char* Persona::getNombre()
 {

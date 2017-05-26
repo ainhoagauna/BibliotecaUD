@@ -80,8 +80,10 @@ void altaUsuario()
 
 void printSueldo(Admin &a)
 {
-	
+	cout << "Usuario:" <<a.getUsuario() << endl;
+	cout << "Contrasena:" <<a.getContrasena() << endl;
 	cout << "Sueldo:" <<a.getSueldo() << endl;
+
 	
 }
 
@@ -96,7 +98,7 @@ void datosAdmin()
 {
 	
 
-	Admin *a = new Admin("Pepito", "Palotes", 1000);
+	Admin *a = new Admin("Pepito", "Palotes", "Admin", "Admin",1000);
 
 
 	Persona *p2 = a; 
