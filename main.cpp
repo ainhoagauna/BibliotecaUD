@@ -5,7 +5,6 @@
 #include "gestion.hpp"
 #include "Persona.hpp"
 #include "Usuario.hpp"
-#include "peliculas.cpp"
 #include "Admin.hpp"
 #include <iostream>
 #include <vector>

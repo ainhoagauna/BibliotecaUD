@@ -2,8 +2,6 @@
 #include "Admin.hpp"
 #include "Usuario.hpp"
 #include "Persona.hpp"
-#include "peliculas.hpp"
-#include "gestion.hpp"
 #include "gestion.hpp"
 #include "gestion.h"
 #include <iostream>
@@ -106,17 +104,6 @@ void datosAdmin()
 	printPersonaRef(*p2); 
 	printSueldo(*a); 
 
-
-	ofstream fs;
-	fs.open("Administrador.txt", ios::app);//ios:app para que escriba al final 
-
-	
-
-   fs << a << endl;
-  
-   fs.close();
-
-
-	
+	cout<<endl;
 
 }
