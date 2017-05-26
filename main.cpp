@@ -54,11 +54,10 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
           }
           if(atributos.size()<4)
           {
-      
-
+     
          	 nombre= atributos[0].c_str();
-         	 apellido=atributos[0+1].c_str();
-          	 num_socio = atoi(atributos[0+3].c_str());
+         	 apellido=atributos[1].c_str();
+          	 num_socio = atoi(atributos[2].c_str());
          	
 
           
@@ -71,6 +70,7 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
           else 
           {
             cout<< "NO COINCIDEN LOS DATOS"<< endl;
+            break;
           }
 
           atributos.clear();
@@ -89,7 +89,7 @@ void GuardarEnFichero(vector<Usuario> & vectorUsuarios)
   ofstream ofs("Usuario.txt");
   for (vector< Usuario>:: iterator i= vectorUsuarios.begin(); i!= vectorUsuarios.end(); i++)
   {
-    ofs << *i ;
+    ofs << *i << '\n' ;
   }
   
   ofs.close();
@@ -113,18 +113,19 @@ int eliminarUsuario()
 		string nombreU=vectorUsuarios[i].getNombre();
 		string apellidoU=vectorUsuarios[i].getApellido();
 		int num_socioU=vectorUsuarios[i].getNum_socio();
-		
+		cout<<"HOLA"<<endl;
 		if(nombreU==nombre)
 		{
 			correcto=true;
 
+			cout<<"HOLA"<<endl;
 			cout<<"Eliminando usuario..."<<endl<<nombre<<endl;
 
 			vectorUsuarios.erase(vectorUsuarios.begin()+i);
 
 			GuardarEnFichero(vectorUsuarios);
 			cout<<"ELIMINADO!!"<<endl; //Hay que llamar al metodo para que guarde
-			
+
 
 		}
 		
@@ -138,6 +139,10 @@ int eliminarUsuario()
 			cout<<"El usuario introducido no se encuentra en el sistema"<<endl;
 			eliminarUsuario();
 		}
+
+		menuAdmin();
+		break;
+
 	}
 
 }
