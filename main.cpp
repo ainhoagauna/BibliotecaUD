@@ -53,20 +53,22 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
           while ( getline( iss, s, ' ' ) ) 
           {
          
-              atributos.push_back(s);
+             atributos.push_back(s);
           }
-          if(atributos.size()<3)
+          if(atributos.size()<4)
           {
       
 
          	 nombre= atributos[0].c_str();
          	 apellido=atributos[0].c_str();
-          	//um_socio = 0;
+          	 num_socio = atoi(atributos[0].c_str());
+         	
+
           
           Usuario u (nombre, apellido, num_socio);
-          cout<<'\t'<< u;
-          vectorUsuarios.push_back(u);
+          cout<<u<<endl;
 
+          vectorUsuarios.push_back(u);
 
           }
           else 
@@ -78,9 +80,9 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
                     
     //cout<< "Usuario "<< i << ": "<<usuario<< endl;
     usuario ="";
-    i++;
+   //i++;
 
-   // cout<<"Llegooo"<<endl;
+  
   }
 }
 void GuardarEnFichero(vector<Usuario> & vectorUsuarios)
@@ -126,7 +128,7 @@ int eliminarUsuario()
 			vectorUsuarios.erase(vectorUsuarios.begin()+i+2);
 
 			GuardarEnFichero(vectorUsuarios);
-			cout<<"GUARDO!!"<<endl; //Hay que llamar al metodo para que guarde
+			cout<<"ELIMINADO!!"<<endl; //Hay que llamar al metodo para que guarde
 			break;
 
 		}
