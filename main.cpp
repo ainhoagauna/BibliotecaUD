@@ -45,29 +45,29 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
   int i=0;
   while(getline(ifs, line))
   {
-    cout<<"Estro"<<endl;
+  	//  cout<<"Estro"<<endl;
     usuario += line;
 
           istringstream iss(usuario);
           string s;
           while ( getline( iss, s, ' ' ) ) 
           {
-          	//cout<<"Entrooo 1"<<endl;
+         
               atributos.push_back(s);
           }
           if(atributos.size()<3)
           {
-          //	cout<<"Entrooo 2"<<endl;
+      
 
-          nombre= atributos[0].c_str();
-          apellido=atributos[0].c_str();
-          //num_socio = 0;
+         	 nombre= atributos[0].c_str();
+         	 apellido=atributos[0].c_str();
+          	//um_socio = 0;
           
           Usuario u (nombre, apellido, num_socio);
-          cout<<'\t'<< '\t'<< u;
+          cout<<'\t'<< u;
           vectorUsuarios.push_back(u);
 
-          //cout<<"Entrooo 3"<<endl;
+
           }
           else 
           {
@@ -80,8 +80,18 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
     usuario ="";
     i++;
 
-    cout<<"Llegooo"<<endl;
+   // cout<<"Llegooo"<<endl;
   }
+}
+void GuardarEnFichero(vector<Usuario> & vectorUsuarios)
+{
+  ofstream ofs("Usuario.txt");
+  for (vector< Usuario>:: iterator i= vectorUsuarios.begin(); i!= vectorUsuarios.end(); i++)
+  {
+    ofs << *i ;
+  }
+  
+  ofs.close();
 }
 int eliminarUsuario()
 {
@@ -104,6 +114,7 @@ int eliminarUsuario()
 		string nombreU=vectorUsuarios[i].getNombre();
 		string apellidoU=vectorUsuarios[i].getApellido();
 		int num_socioU=vectorUsuarios[i].getNum_socio();
+		
 		if(nombreU==nombre)
 		{
 			correcto=true;
@@ -111,9 +122,11 @@ int eliminarUsuario()
 			cout<<"Eliminando usuario..."<<nombre<<endl;
 
 			vectorUsuarios.erase(vectorUsuarios.begin()+i);
+			vectorUsuarios.erase(vectorUsuarios.begin()+i+1);
+			vectorUsuarios.erase(vectorUsuarios.begin()+i+2);
 
-			cout<<"GUARDO!!"<<endl;
-
+			GuardarEnFichero(vectorUsuarios);
+			cout<<"GUARDO!!"<<endl; //Hay que llamar al metodo para que guarde
 			break;
 
 		}
@@ -124,7 +137,7 @@ int eliminarUsuario()
 
 		if(correcto==false)
 		{
-			cout<<"El usuarui introducido no se encuentra en el sistema"<<endl;
+			cout<<"El usuario introducido no se encuentra en el sistema"<<endl;
 		}
 	}
 
