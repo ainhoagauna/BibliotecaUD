@@ -110,7 +110,7 @@ int eliminarUsuario()
 	for(int i=0; i<vectorUsuarios.size();i++)
 	{
 		string nombreUsuario=vectorUsuarios[i].getNombre();
-		
+		/*
 		do
 		{
 			comprobacion=true;
@@ -128,11 +128,8 @@ int eliminarUsuario()
 		}
 		while(nombre==nombreUsuario);
 		i++;
+*/
 
-		
-		
-	}
-		/*
 		if(nombre==nombreUsuario)
 		{
 			comprobacion=true;
@@ -146,11 +143,15 @@ int eliminarUsuario()
 			GuardarUsuarios(vectorUsuarios);
 			cout<<"ELIMINADO!!"<<endl; 
 
-			break;
+			
 			
 		}
 		
 		
+	}
+		
+		
+		/*
 		else
 		{
 			comprobacion=false;
