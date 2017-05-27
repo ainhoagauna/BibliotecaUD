@@ -10,7 +10,10 @@
 #include <vector>
 #include "string"
 #include <fstream>
+#include <algorithm>
+#include <cstdio>
 #include <sstream>
+
 
 
 using namespace std;
@@ -24,7 +27,7 @@ void clear_if_needed(char *str);
 #define USU_PASSWORD "usuario"
 #define MAX_PELICULAS 	5
 
-void LeerFichero(vector<Usuario> & vectorUsuarios)
+void LeerUsuarios(vector<Usuario> & vectorUsuarios)
 {
   cout <<"Leyendo datos del fichero..."<< endl;
   vectorUsuarios.clear();
@@ -42,7 +45,6 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
   int i=0;
   while(getline(ifs, line))
   {
-  	//  cout<<"Estro"<<endl;
     usuario+= line;
 
           istringstream iss(usuario);
@@ -59,8 +61,6 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
          	 apellido=atributos[1].c_str();
           	 num_socio = atoi(atributos[2].c_str());
          	
-
-          
           Usuario u (nombre, apellido, num_socio);
           cout<<u<<endl;
 
@@ -74,8 +74,7 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
           }
 
           atributos.clear();
-                    
-    //cout<< "Usuario "<< i << ": "<<usuario<< endl;
+                   
     usuario ="";
    	i++;
 
@@ -84,9 +83,10 @@ void LeerFichero(vector<Usuario> & vectorUsuarios)
 
   ifs.close();
 }
-void GuardarEnFichero(vector<Usuario> & vectorUsuarios)
+void GuardarUsuarios(vector<Usuario> & vectorUsuarios)
 {
   ofstream ofs("Usuario.txt");
+
   for (vector< Usuario>:: iterator i= vectorUsuarios.begin(); i!= vectorUsuarios.end(); i++)
   {
     ofs << *i << '\n' ;
@@ -96,12 +96,12 @@ void GuardarEnFichero(vector<Usuario> & vectorUsuarios)
 }
 int eliminarUsuario()
 {	
-	bool correcto=false;
+	bool comprobacion=false;
 	string nombre;
 	string apellido;
 	int num_socio;
 	vector<Usuario>vectorUsuarios;
-	LeerFichero(vectorUsuarios);
+	LeerUsuarios(vectorUsuarios);
 
 	cout<<"Introduzca el nombre del usuario que desea eliminar"<<endl;
 	cin>>nombre;
@@ -109,41 +109,64 @@ int eliminarUsuario()
 	
 	for(int i=0; i<vectorUsuarios.size();i++)
 	{
+		string nombreUsuario=vectorUsuarios[i].getNombre();
 		
-		string nombreU=vectorUsuarios[i].getNombre();
-		string apellidoU=vectorUsuarios[i].getApellido();
-		int num_socioU=vectorUsuarios[i].getNum_socio();
-		cout<<"HOLA"<<endl;
-		if(nombreU==nombre)
+		do
 		{
-			correcto=true;
+			comprobacion=true;
+			cout<<i<<endl;
 
-			cout<<"HOLA"<<endl;
 			cout<<"Eliminando usuario..."<<endl<<nombre<<endl;
-
+			
 			vectorUsuarios.erase(vectorUsuarios.begin()+i);
 
-			GuardarEnFichero(vectorUsuarios);
-			cout<<"ELIMINADO!!"<<endl; //Hay que llamar al metodo para que guarde
+			GuardarUsuarios(vectorUsuarios);
+			cout<<"ELIMINADO!!"<<endl; 
 
-
+			break;
+		
 		}
+		while(nombre==nombreUsuario);
+		i++;
+
+		
+		
+	}
+		/*
+		if(nombre==nombreUsuario)
+		{
+			comprobacion=true;
+			cout<<i<<endl;
+
+			cout<<"Eliminando usuario..."<<endl<<nombre<<endl;
+
+			
+			vectorUsuarios.erase(vectorUsuarios.begin()+i);
+
+			GuardarUsuarios(vectorUsuarios);
+			cout<<"ELIMINADO!!"<<endl; 
+
+			break;
+			
+		}
+		
 		
 		else
 		{
-			correcto=false;
-		}
+			comprobacion=false;
 
-		if(correcto==false)
+		}
+		*/
+
+		if(comprobacion==false)
 		{
 			cout<<"El usuario introducido no se encuentra en el sistema"<<endl;
 			eliminarUsuario();
 		}
+	
+	
 
-		menuAdmin();
-		break;
-
-	}
+	return 0;
 
 }
 
@@ -191,7 +214,6 @@ int main(int argc, char **argv, char **vectorUsuarios)
 					case 4:
 						
 						altaUsuario();
-						//option = 0;
 						break;
 
 
