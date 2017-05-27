@@ -33,12 +33,12 @@ Persona::~Persona()
 		delete[] apellido;
 	}
 
-const char* Persona::getNombre()
+const char* Persona::getNombre() const
 {
 	return nombre;
 }
 
-const char* Persona::getApellido()
+const char* Persona::getApellido() const
 {
 	return apellido;
 }

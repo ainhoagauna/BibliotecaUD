@@ -14,19 +14,16 @@ class Usuario
 public:
 	Usuario() {}
 
-	Usuario(string nombre,  string apellido, int num_socio);
+	Usuario(const string nombre, const string apellido, const int num_socio);
 
 
-	string getNombre() const { return nombre; }
-	string getApellido() const { return apellido; }
-	int getNum_socio() const { return num_socio; }
+	const string getNombre() const { return nombre; }
+	const string getApellido() const { return apellido; }
+	const int getNum_socio() const { return num_socio; }
 
-	friend istream& operator>>(istream& in, Usuario& p); //sobrecarga --> >> para poder leer de la entrada,FRIEND-->todo lo que sea privado es publico para friend(evita el encapsulamiento)
-
-
+	friend istream& operator>>(istream& in, Usuario& p); 
 
 };
 
-ostream& operator<<(ostream& out, const Usuario& p); //ostream es un atajo, para evitar el encapsulamiento ESTA FUERA DE LA CLASE
-
+ostream& operator<<(ostream& out, const Usuario& p); 
 #endif

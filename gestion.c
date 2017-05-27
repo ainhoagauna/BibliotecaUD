@@ -9,72 +9,7 @@ void liberarMemoria(Pelicula *a, int total);
 
 void clear_if_needed(char *str);
 
-int eliminarBuscar(char* palabra)
-{
-	FILE *f;
-	f = fopen("peliculas.txt", "r");
 
-	char texto[80];
-	
-
-    int i,tmp1,tmp2,konta=0;
-
-   
-
-	while (feof(f)==0)
-
-      {
-      	
-            fgets(texto,80,f);
-
-            for(i=0;i<strlen(texto);i++)
-
-            {
-
-               if (palabra[0]==texto[i])
-
-               {
-               		
-                  tmp1=0;
-
-                  tmp2=i;
-
-                          
-
-                  while ((palabra[tmp1]==texto[tmp2])&&(tmp2<strlen(texto))&&(tmp1!=strlen(palabra)))
-
-                  {
-                        tmp1++;
-
-                        tmp2++;
-
-                        
-                        if (tmp1==strlen(palabra))
-                        {
-						
-                        	konta++;
-                        }
-                                                
-                  }
-               }
-            }  
-      }
-
-       if(konta>0)
-        {
-        	printf("Pelicula existente!\n");
-	      	
-        }
-        else
-        {
-        	printf("Vuelva a intentarlo \n");
-	      	gets(palabra);
-	      	//eliminarPelicula(palabra);
-        }
-     
-
-      fclose(f);
-}
 void ventas()
 {
 	FILE* f;

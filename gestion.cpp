@@ -3,7 +3,6 @@
 #include "Usuario.hpp"
 #include "Persona.hpp"
 #include "gestion.hpp"
-#include "gestion.h"
 #include <iostream>
 #include <fstream>
 #include "string.h"
@@ -17,38 +16,27 @@ void listaUsuario()
 	string line;
 	ifstream myFile("Usuario.txt");
 
+	
 	cout<<"Leyendo usuarios...."<<endl;
 	cout<<"________________________________________________________"<< endl;
 
+
+
+	
 	while(getline(myFile,line))
 	{
 
 		cout<< line <<endl;
-
 	
 	}	
 
+	
+	
+	cout<<endl;
 	myFile.close();
 
 }
-void mostrarAdmin()
-{
-	string line;
-	ifstream myFile("Administrador.txt");
 
-	cout<<"Mostrando Administrador...."<<endl;
-	cout<<"____________________________"<< endl;
-
-	while(getline(myFile,line))
-	{
-
-		cout<< line <<endl;
-		cout<<" "<<endl;
-
-	
-	}	
-
-}
 void altaUsuario()
 {
 	Usuario p1;
@@ -67,12 +55,10 @@ void altaUsuario()
 	
 	cout << "Este es el usuario guardado: " << endl;
 	cout << endl << p1 << endl;
-   	cout << "SE HA DADO DE ALTA CORRECTAMENTE!!" << endl;
+   	cout << "SE HA DADO DE ALTA CORRECTAMENTE!!" << endl<<endl;
 
-   
-   	
-   	cout <<"Ok?"<<endl;
-
+     	
+  
 }
 
 
@@ -94,16 +80,18 @@ void printPersonaRef(Persona &p)
 
 void datosAdmin()
 {
-	
-
 	Admin *a = new Admin("Pepito", "Palotes", "Admin", "Admin",1000);
 
 
 	Persona *p2 = a; 
 
+	cout<<"Mostrando Administrador...."<<endl;
+	cout<<"____________________________"<< endl;
 	printPersonaRef(*p2); 
 	printSueldo(*a); 
 
 	cout<<endl;
+
+	delete p2;
 
 }

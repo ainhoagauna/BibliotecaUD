@@ -103,6 +103,7 @@ int eliminarUsuario()
 	vector<Usuario>vectorUsuarios;
 	LeerUsuarios(vectorUsuarios);
 
+	cout<<endl<<endl;
 	cout<<"Introduzca el nombre del usuario que desea eliminar"<<endl;
 	cin>>nombre;
 
@@ -110,38 +111,20 @@ int eliminarUsuario()
 	for(int i=0; i<vectorUsuarios.size();i++)
 	{
 		string nombreUsuario=vectorUsuarios[i].getNombre();
-		/*
-		do
-		{
-			comprobacion=true;
-			cout<<i<<endl;
-
-			cout<<"Eliminando usuario..."<<endl<<nombre<<endl;
-			
-			vectorUsuarios.erase(vectorUsuarios.begin()+i);
-
-			GuardarUsuarios(vectorUsuarios);
-			cout<<"ELIMINADO!!"<<endl; 
-
-			break;
-		
-		}
-		while(nombre==nombreUsuario);
-		i++;
-*/
-
+	
 		if(nombre==nombreUsuario)
 		{
 			comprobacion=true;
-			cout<<i<<endl;
+			
 
-			cout<<"Eliminando usuario..."<<endl<<nombre<<endl;
+			cout<<"Eliminando usuario..."<<nombre<<endl;
 
 			
 			vectorUsuarios.erase(vectorUsuarios.begin()+i);
 
 			GuardarUsuarios(vectorUsuarios);
-			cout<<"ELIMINADO!!"<<endl; 
+
+			cout<<endl<<"ELIMINADO!!"<<endl; 
 
 			
 			
@@ -151,24 +134,12 @@ int eliminarUsuario()
 	}
 		
 		
-		/*
-		else
-		{
-			comprobacion=false;
-
-		}
-		*/
-
-		if(comprobacion==false)
+	if(comprobacion==false)
 		{
 			cout<<"El usuario introducido no se encuentra en el sistema"<<endl;
 			eliminarUsuario();
 		}
 	
-	
-
-	return 0;
-
 }
 
 int main(int argc, char **argv, char **vectorUsuarios)
@@ -218,20 +189,24 @@ int main(int argc, char **argv, char **vectorUsuarios)
 						break;
 
 
-					case 5:
+					case 5: 
 
-						listaUsuario();
+						eliminarUsuario();
 						break;
 
 					case 6:
 
+						listaUsuario();
+						break;
+
+					
+
+					case 7:
+
 						datosAdmin();
 						break;
 
-					case 7: 
-
-						eliminarUsuario();
-						break;
+					
 
 					default:
 						return -1;
@@ -314,9 +289,10 @@ int menuAdmin(void)
 		printf("2. Lista de peliculas \n");
 		printf("3. Consultar ventas\n");
 		printf("4. Alta usuario\n");
-		printf("5. Lista de los usuarios\n");
-		printf("6. Datos admin\n");
-		printf("7. Eliminar usuario\n");
+		printf("5. Eliminar usuario\n");
+		printf("6. Lista de los usuarios\n");		
+		printf("7. Datos del administrador\n");
+		
 		printf("(q para salir)\n");
 		printf("\n");
 

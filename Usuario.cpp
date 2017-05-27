@@ -4,13 +4,13 @@
 #include <ctype.h> 
 
 
-Usuario::Usuario(string nombre,  string apellido, int num_socio) 
+Usuario::Usuario(const string nombre, const string apellido, const int num_socio) 
 {
 
 	this->nombre = nombre;
 	this->apellido = apellido;
 	this->num_socio=num_socio;
-};
+}
 
 
 
@@ -30,6 +30,6 @@ istream& operator>>(istream& in, Usuario& p)
 ostream& operator<<(ostream& out, const Usuario& p)
 {
 	out << p.getNombre() << " "<<p.getApellido() << " " << p.getNum_socio();
-	//out << "----------------------" << endl;
+
 	return out;
 }
